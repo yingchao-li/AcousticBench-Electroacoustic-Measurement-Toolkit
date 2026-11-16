@@ -1,0 +1,80 @@
+# ---------------------------------------------------------------------------
+# AcousticBench full experiment workflow (manual trigger)
+#
+# Downloads the published Zenodo dataset (SHA-256 verified), runs the sixteen
+# reproducible experiments E01–E16, builds the PDF/Excel/HTML reports and
+# uploads the resulting artefacts.  This is intentionally workflow_dispatch
+# only: it needs the external 90 MB dataset and takes a few minutes.
+# ---------------------------------------------------------------------------
+name: Experiments
+
+on:
+  workflow_dispatch:
+    inputs:
+      codes:
+        description: "Experiment codes, comma or space separated (empty = all 16)"
+        required: false
+        default: ""
+        type: string
+
+concurrency:
+  group: experiments-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  experiments:
+    name: run experiments and build reports
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    env:
+      PYTHONPATH: src
+      MPLCONFIGDIR: ${{ github.workspace }}/.cache/matplotlib
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install package with development extras
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Fetch the Zenodo dataset (SHA-256 verified)
+        run: python scripts/fetch_data.py
+
+      - name: Run experiments
+        env:
+          CODES: ${{ inputs.codes }}
+        run: |
+          if [ -n "${CODES}" ]; then
+            bash scripts/run_experiments.sh --codes "${CODES}"
+          else
+            bash scripts/run_experiments.sh
+          fi
+
+      - name: Build PDF / Excel / HTML reports
+        run: python -m acousticbench.cli report
+
+      - name: Upload experiment artefacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: experiments-results
+          path: results/experiments
+          if-no-files-found: warn
+
+      - name: Upload generated reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: reports
+          if-no-files-found: warn

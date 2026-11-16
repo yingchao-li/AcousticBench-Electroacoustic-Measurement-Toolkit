@@ -1,0 +1,161 @@
+{
+  "code": "E01",
+  "title": "Frequency Response",
+  "status": "completed",
+  "metrics": {
+    "hha_median_db_spl_at_1000Hz": {
+      "closed_earmold": 76.13934448012914,
+      "vented_earmold": 77.51151321075886,
+      "nugget_earmold": 77.04916208374597,
+      "silicone_earmold": 77.06274039269056,
+      "open_dome": 62.73696855238907,
+      "tulip_dome": 74.21539016743355,
+      "power_dome": 75.1034508004154
+    },
+    "hha_median_db_spl_at_2000Hz": {
+      "closed_earmold": 84.81150898112635,
+      "vented_earmold": 85.62892849488192,
+      "nugget_earmold": 85.52518523753594,
+      "silicone_earmold": 83.88560858839551,
+      "open_dome": 82.9245904862419,
+      "tulip_dome": 84.75101305619219,
+      "power_dome": 82.49277406984274
+    },
+    "hha_median_db_spl_at_4000Hz": {
+      "closed_earmold": 79.18649629349076,
+      "vented_earmold": 79.8922443100802,
+      "nugget_earmold": 79.43695377972067,
+      "silicone_earmold": 77.23594811639599,
+      "open_dome": 74.9756611814683,
+      "tulip_dome": 73.92729710956013,
+      "power_dome": 72.94052810991684
+    },
+    "hha_median_db_spl_4kHz_band": {
+      "closed_earmold": 81.39949774559695,
+      "nugget_earmold": 81.37914396935327,
+      "open_dome": 80.39707672593357,
+      "power_dome": 76.202828736308,
+      "silicone_earmold": 79.81440175294738,
+      "tulip_dome": 77.50837727787976,
+      "vented_earmold": 81.69046873039898
+    },
+    "n_subjects": 14,
+    "n_families": 7,
+    "frequency_range_hz": [
+      50.0,
+      22050.0
+    ],
+    "note": "Levels are dB SPL at the 11.2 mV receiver drive. The clinical configuration (measurement probe, measurement condition) is used so that all seven families are comparable; dome conditions have no reference-probe data."
+  },
+  "tables": {
+    "hha_median_curves": {
+      "rows": 14308,
+      "columns": [
+        "frequency_hz",
+        "device_code",
+        "device",
+        "family",
+        "family_label",
+        "coupling",
+        "condition",
+        "median_db",
+        "mean_db",
+        "sd_db",
+        "n_valid"
+      ]
+    },
+    "hha_percentile_curves": {
+      "rows": 12971,
+      "columns": [
+        "frequency_hz",
+        "device_code",
+        "device",
+        "family",
+        "family_label",
+        "condition",
+        "n_valid",
+        "q10",
+        "q25",
+        "median_db",
+        "q75",
+        "q90"
+      ]
+    },
+    "hha_band_levels_summary": {
+      "rows": 63,
+      "columns": [
+        "family",
+        "family_label",
+        "band",
+        "band_center_hz",
+        "median_db",
+        "mean_db",
+        "sd_db",
+        "n",
+        "index_x",
+        "q25_db",
+        "index_y",
+        "q75_db"
+      ]
+    },
+    "hha_band_levels_raw": {
+      "rows": 2646,
+      "columns": [
+        "band",
+        "band_center_hz",
+        "band_low_hz",
+        "band_high_hz",
+        "device_code",
+        "device",
+        "family",
+        "family_label",
+        "coupling",
+        "condition",
+        "subject",
+        "reinsertion",
+        "level_db",
+        "valid",
+        "quantity",
+        "unit"
+      ]
+    }
+  },
+  "figures": [],
+  "artifacts": {
+    "tables": [
+      "hha_median_curves.csv.gz",
+      "hha_percentile_curves.csv.gz",
+      "hha_band_levels_summary.csv",
+      "hha_band_levels_raw.csv.gz"
+    ],
+    "figures": [
+      "hha_median_curves.png",
+      "hha_subject_distribution.png",
+      "hha_band_heatmap.png"
+    ]
+  },
+  "warnings": [],
+  "narrative": "Hha is highest at mid frequencies (\u22482 kHz) and rolls off both below 500 Hz and above 8 kHz. Closed and nugget earmolds show the highest low-frequency output, while open domes show the lowest, reflecting the acoustic leakage of the coupling. The across-subject fan chart demonstrates substantial inter-individual variability that must be respected by any statistical comparison (subject is the independent unit).",
+  "duration_s": 0.44,
+  "parameters": {
+    "code": "E01",
+    "devices": "all",
+    "show_individual_subjects": true,
+    "bands_hz": [
+      100,
+      1000,
+      4000
+    ]
+  },
+  "data_provenance": {
+    "dataset_path": "Data.mat",
+    "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+    "mat_format": "v5",
+    "n_frequencies": 2049,
+    "n_subjects": 14,
+    "n_reinsertions": 3,
+    "n_devices": 14,
+    "invalid_policy": "exclude"
+  },
+  "error": null
+}

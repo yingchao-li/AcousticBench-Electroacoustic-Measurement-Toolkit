@@ -1,0 +1,17 @@
+code,title,status,duration_s,n_tables,n_figures,warnings,error,directory
+E01,Frequency Response,completed,0.44,4,3,0,,E01_frequency_response
+E02,Probe Tube Measurement Bias,completed,0.439,10,5,0,,E02_probe_tube_measurement_bias
+E03,Measurement Repeatability,completed,0.75,4,4,0,,E03_measurement_repeatability
+E04,Inter-subject Variability,completed,0.764,4,4,0,,E04_inter-subject_variability
+E05,Acoustic Feedback,completed,0.34,5,5,0,,E05_acoustic_feedback
+E06,Real-Ear Response,completed,0.595,5,5,0,,E06_real-ear_response
+E07,Hearing Threshold,completed,0.079,4,3,0,,E07_hearing_threshold
+E08,Statistical Comparison,completed,0.41,2,3,1,,E08_statistical_comparison
+E09,Gain Estimation,completed,2.347,1,3,0,,E09_gain_estimation
+E10,THD Estimation,completed,6.059,1,3,0,,E10_thd_estimation
+E11,SNR Estimation,completed,3.452,1,3,0,,E11_snr_estimation
+E12,Filter Response Estimation,completed,3.49,1,3,0,,E12_filter_response_estimation
+E13,Dynamic Compression,completed,0.115,2,3,0,,E13_dynamic_compression
+E14,Fault Injection,completed,0.142,1,2,0,,E14_fault_injection
+E15,MATLAB-Python Agreement,completed,5.079,3,1,1,,E15_matlab-python_agreement
+E16,Runtime Benchmark,completed,0.905,1,2,0,,E16_runtime_benchmark

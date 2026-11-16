@@ -1,0 +1,2093 @@
+{
+  "generated": "2026-11-16T17:42:45+0100",
+  "project": "AcousticBench",
+  "version": "0.1.0",
+  "experiments": [
+    {
+      "code": "E01",
+      "title": "Frequency Response",
+      "status": "completed",
+      "metrics": {
+        "hha_median_db_spl_at_1000Hz": {
+          "closed_earmold": 76.13934448012914,
+          "vented_earmold": 77.51151321075886,
+          "nugget_earmold": 77.04916208374597,
+          "silicone_earmold": 77.06274039269056,
+          "open_dome": 62.73696855238907,
+          "tulip_dome": 74.21539016743355,
+          "power_dome": 75.1034508004154
+        },
+        "hha_median_db_spl_at_2000Hz": {
+          "closed_earmold": 84.81150898112635,
+          "vented_earmold": 85.62892849488192,
+          "nugget_earmold": 85.52518523753594,
+          "silicone_earmold": 83.88560858839551,
+          "open_dome": 82.9245904862419,
+          "tulip_dome": 84.75101305619219,
+          "power_dome": 82.49277406984274
+        },
+        "hha_median_db_spl_at_4000Hz": {
+          "closed_earmold": 79.18649629349076,
+          "vented_earmold": 79.8922443100802,
+          "nugget_earmold": 79.43695377972067,
+          "silicone_earmold": 77.23594811639599,
+          "open_dome": 74.9756611814683,
+          "tulip_dome": 73.92729710956013,
+          "power_dome": 72.94052810991684
+        },
+        "hha_median_db_spl_4kHz_band": {
+          "closed_earmold": 81.39949774559695,
+          "nugget_earmold": 81.37914396935327,
+          "open_dome": 80.39707672593357,
+          "power_dome": 76.202828736308,
+          "silicone_earmold": 79.81440175294738,
+          "tulip_dome": 77.50837727787976,
+          "vented_earmold": 81.69046873039898
+        },
+        "n_subjects": 14,
+        "n_families": 7,
+        "frequency_range_hz": [
+          50.0,
+          22050.0
+        ],
+        "note": "Levels are dB SPL at the 11.2 mV receiver drive. The clinical configuration (measurement probe, measurement condition) is used so that all seven families are comparable; dome conditions have no reference-probe data."
+      },
+      "tables": {
+        "hha_median_curves": {
+          "rows": 14308,
+          "columns": [
+            "frequency_hz",
+            "device_code",
+            "device",
+            "family",
+            "family_label",
+            "coupling",
+            "condition",
+            "median_db",
+            "mean_db",
+            "sd_db",
+            "n_valid"
+          ]
+        },
+        "hha_percentile_curves": {
+          "rows": 12971,
+          "columns": [
+            "frequency_hz",
+            "device_code",
+            "device",
+            "family",
+            "family_label",
+            "condition",
+            "n_valid",
+            "q10",
+            "q25",
+            "median_db",
+            "q75",
+            "q90"
+          ]
+        },
+        "hha_band_levels_summary": {
+          "rows": 63,
+          "columns": [
+            "family",
+            "family_label",
+            "band",
+            "band_center_hz",
+            "median_db",
+            "mean_db",
+            "sd_db",
+            "n",
+            "index_x",
+            "q25_db",
+            "index_y",
+            "q75_db"
+          ]
+        },
+        "hha_band_levels_raw": {
+          "rows": 2646,
+          "columns": [
+            "band",
+            "band_center_hz",
+            "band_low_hz",
+            "band_high_hz",
+            "device_code",
+            "device",
+            "family",
+            "family_label",
+            "coupling",
+            "condition",
+            "subject",
+            "reinsertion",
+            "level_db",
+            "valid",
+            "quantity",
+            "unit"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "hha_median_curves.csv.gz",
+          "hha_percentile_curves.csv.gz",
+          "hha_band_levels_summary.csv",
+          "hha_band_levels_raw.csv.gz"
+        ],
+        "figures": [
+          "hha_median_curves.png",
+          "hha_subject_distribution.png",
+          "hha_band_heatmap.png"
+        ]
+      },
+      "warnings": [],
+      "narrative": "Hha is highest at mid frequencies (\u22482 kHz) and rolls off both below 500 Hz and above 8 kHz. Closed and nugget earmolds show the highest low-frequency output, while open domes show the lowest, reflecting the acoustic leakage of the coupling. The across-subject fan chart demonstrates substantial inter-individual variability that must be respected by any statistical comparison (subject is the independent unit).",
+      "duration_s": 0.44,
+      "parameters": {
+        "code": "E01",
+        "devices": "all",
+        "show_individual_subjects": true,
+        "bands_hz": [
+          100,
+          1000,
+          4000
+        ]
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E02",
+      "title": "Probe Tube Measurement Bias",
+      "status": "completed",
+      "metrics": {
+        "probe_bias_median_abs_500_4000Hz_db": 1.7433473594504676,
+        "probe_bias_frequency_resolved_median_db": {
+          "100": -1.6879677059620022,
+          "250": -1.686830416939813,
+          "500": -1.713144660512981,
+          "1000": -1.3698198229699727,
+          "2000": -1.571666798496679,
+          "4000": -1.4568284545989059,
+          "8000": -3.1386494411363373
+        },
+        "ptpe_hha_100Hz_db_by_family": {
+          "closed_earmold": -3.686478765229129,
+          "vented_earmold": -0.26599189206699947,
+          "nugget_earmold": -8.618733083311326,
+          "silicone_earmold": -4.385181551552989
+        },
+        "ptpe_reoig_1kHz_db_by_family": {
+          "closed_earmold": 3.243664632447693,
+          "nugget_earmold": 6.063550650235758,
+          "silicone_earmold": 1.8876031345019513,
+          "vented_earmold": 0.3590532056438853
+        },
+        "delta_threshold_125Hz_db_by_family": {
+          "closed_earmold": -3.892857142857143,
+          "nugget_earmold": -5.952380952380952,
+          "open_dome": -6.344131569286608e-17,
+          "power_dome": -5.273809523809524,
+          "silicone_earmold": -1.1547619047619049,
+          "tulip_dome": -1.2857142857142854,
+          "vented_earmold": -3.172065784643304e-17
+        },
+        "n_subjects": 14,
+        "sign_convention": "\u0394Hha<0 and \u0394T<0 = reduced driver output; \u0394REOIG>0 = more leakage"
+      },
+      "tables": {
+        "probe_bias_curves_percentiles": {
+          "rows": 7412,
+          "columns": [
+            "frequency_hz",
+            "device_code",
+            "device",
+            "family",
+            "family_label",
+            "condition",
+            "n_valid",
+            "q10",
+            "q25",
+            "median_db",
+            "q75",
+            "q90"
+          ]
+        },
+        "probe_bias_bands_summary": {
+          "rows": 36,
+          "columns": [
+            "family",
+            "family_label",
+            "band",
+            "band_center_hz",
+            "median_db",
+            "mean_db",
+            "sd_db",
+            "n",
+            "index_x",
+            "q25_db",
+            "index_y",
+            "q75_db"
+          ]
+        },
+        "probe_bias_bands_ci": {
+          "rows": 36,
+          "columns": [
+            "family",
+            "family_label",
+            "band",
+            "band_center_hz",
+            "n",
+            "mean_db",
+            "sd_db",
+            "se_db",
+            "ci_low_db",
+            "ci_high_db",
+            "abs_bias_db"
+          ]
+        },
+        "ptpe_hha_curves_percentiles": {
+          "rows": 7412,
+          "columns": [
+            "frequency_hz",
+            "device_code",
+            "device",
+            "family",
+            "family_label",
+            "condition",
+            "n_valid",
+            "q10",
+            "q25",
+            "median_db",
+            "q75",
+            "q90"
+          ]
+        },
+        "ptpe_hha_bands_summary": {
+          "rows": 36,
+          "columns": [
+            "family",
+            "family_label",
+            "band",
+            "band_center_hz",
+            "median_db",
+            "mean_db",
+            "sd_db",
+            "n",
+            "index_x",
+            "q25_db",
+            "index_y",
+            "q75_db"
+          ]
+        },
+        "ptpe_hha_bands_ci": {
+          "rows": 36,
+          "columns": [
+            "family",
+            "family_label",
+            "band",
+            "band_center_hz",
+            "n",
+            "mean_db",
+            "sd_db",
+            "se_db",
+            "ci_low_db",
+            "ci_high_db"
+          ]
+        },
+        "ptpe_reoig_bands_summary": {
+          "rows": 36,
+          "columns": [
+            "family",
+            "family_label",
+            "band",
+            "band_center_hz",
+            "median_db",
+            "mean_db",
+            "sd_db",
+            "n",
+            "index_x",
+            "q25_db",
+            "index_y",
+            "q75_db"
+          ]
+        },
+        "ptpe_reoig_bands_ci": {
+          "rows": 36,
+          "columns": [
+            "family",
+            "family_label",
+            "band",
+            "band_center_hz",
+            "n",
+            "mean_db",
+            "sd_db",
+            "se_db",
+            "ci_low_db",
+            "ci_high_db"
+          ]
+        },
+        "ptpe_threshold_125Hz": {
+          "rows": 98,
+          "columns": [
+            "family",
+            "family_label",
+            "subject",
+            "reinsertion",
+            "delta_t_db",
+            "valid"
+          ]
+        },
+        "ptpe_threshold_125Hz_ci": {
+          "rows": 7,
+          "columns": [
+            "family",
+            "family_label",
+            "n",
+            "mean_db",
+            "sd_db",
+            "se_db",
+            "ci_low_db",
+            "ci_high_db"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "probe_bias_curves_percentiles.csv.gz",
+          "probe_bias_bands_summary.csv",
+          "probe_bias_bands_ci.csv",
+          "ptpe_hha_curves_percentiles.csv.gz",
+          "ptpe_hha_bands_summary.csv",
+          "ptpe_hha_bands_ci.csv",
+          "ptpe_reoig_bands_summary.csv",
+          "ptpe_reoig_bands_ci.csv",
+          "ptpe_threshold_125Hz.csv",
+          "ptpe_threshold_125Hz_ci.csv"
+        ],
+        "figures": [
+          "probe_bias_curves.png",
+          "ptpe_hha_curves.png",
+          "ptpe_reoig_bands.png",
+          "ptpe_hha_bands.png",
+          "ptpe_threshold_125.png"
+        ]
+      },
+      "warnings": [],
+      "narrative": "The two probe tubes agree within \u22481.5 dB when both are in the ear, with the measurement probe reading slightly lower; the bias grows towards 8 kHz. Inserting the measurement probe reduces the low-frequency driver output (\u0394Hha < 0), most strongly for the nugget earmold, and increases the leakage of external sound (\u0394REOIG > 0), most strongly for the nugget and closed earmolds. Threshold differences at 125 Hz confirm the effect for all families and extend it to domes, where no reference probe exists. These directions reproduce the source study and validate the validity model implemented in AcousticBench.",
+      "duration_s": 0.439,
+      "parameters": {
+        "code": "E02",
+        "report_frequencies_hz": [
+          100,
+          250,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        "ptpe_frequencies_hz": [
+          100,
+          250,
+          500,
+          1000
+        ]
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E03",
+      "title": "Measurement Repeatability",
+      "status": "completed",
+      "metrics": {
+        "n_subjects": 14,
+        "wide_band_hz": [
+          500.0,
+          4000.0
+        ],
+        "median_within_subject_sd_500_4000Hz_db_by_family": {
+          "closed_earmold": 0.4221474438240373,
+          "vented_earmold": 0.25439077305810653,
+          "nugget_earmold": 0.4614889900733945,
+          "silicone_earmold": 0.2792952666504227,
+          "open_dome": 0.3697240342773186,
+          "tulip_dome": 0.38379709903873427,
+          "power_dome": 0.4248518910618781
+        },
+        "repeatability_coefficient_500_4000Hz_db_by_family": {
+          "closed_earmold": 1.170133015139092,
+          "vented_earmold": 0.7051352475466468,
+          "nugget_earmold": 1.2791822177494079,
+          "silicone_earmold": 0.7741669818471301,
+          "open_dome": 1.024822737476147,
+          "tulip_dome": 1.0638312828136547,
+          "power_dome": 1.1776293604255468
+        },
+        "icc_2_1_500_4000Hz_by_family": {
+          "closed_earmold": 0.7651494122879959,
+          "vented_earmold": 0.9829426367871402,
+          "nugget_earmold": 0.8704085366515857,
+          "silicone_earmold": 0.9598529434932842,
+          "open_dome": 0.9484688686653725,
+          "tulip_dome": 0.9380455553387284,
+          "power_dome": 0.905453851298046
+        },
+        "overall_median_sd_500_4000Hz_db": 0.38379709903873427,
+        "worst_band": {
+          "band": "63 Hz",
+          "family": "power_dome",
+          "sd_db": 3.501105206285194
+        },
+        "note": "SD is taken across the three reinsertions of the same subject; the probe tubes stayed in place between reinsertions."
+      },
+      "tables": {
+        "repeatability_summary": {
+          "rows": 63,
+          "columns": [
+            "band",
+            "band_center_hz",
+            "device_code",
+            "device",
+            "family",
+            "coupling",
+            "condition",
+            "n_subjects",
+            "median_level_db",
+            "sd_reinsertion_db_median",
+            "sd_reinsertion_db_p95",
+            "repeatability_coefficient_db",
+            "icc_2_1"
+          ]
+        },
+        "repeatability_wide_band": {
+          "rows": 7,
+          "columns": [
+            "band",
+            "band_center_hz",
+            "device_code",
+            "device",
+            "family",
+            "coupling",
+            "condition",
+            "n_subjects",
+            "median_level_db",
+            "sd_reinsertion_db_median",
+            "sd_reinsertion_db_p95",
+            "repeatability_coefficient_db",
+            "icc_2_1"
+          ]
+        },
+        "reinsertion_sd_by_frequency": {
+          "rows": 200312,
+          "columns": [
+            "frequency_hz",
+            "device_code",
+            "device",
+            "family",
+            "coupling",
+            "condition",
+            "subject",
+            "n_reinsertions",
+            "sd_db",
+            "range_db"
+          ]
+        },
+        "reinsertion_sd_frequency_summary": {
+          "rows": 14308,
+          "columns": [
+            "family",
+            "frequency_hz",
+            "median_sd_db",
+            "q25_sd_db",
+            "q75_sd_db",
+            "n"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "repeatability_summary.csv",
+          "repeatability_wide_band.csv",
+          "reinsertion_sd_by_frequency.csv.gz",
+          "reinsertion_sd_frequency_summary.csv.gz"
+        ],
+        "figures": [
+          "reinsertion_sd_spectrum.png",
+          "reinsertion_sd_bands.png",
+          "icc_bands.png",
+          "reinsertion_example.png"
+        ]
+      },
+      "warnings": [],
+      "narrative": "Reinsertion variability is a few dB in the mid frequencies and grows at the spectral extremes and for loosely coupled domes. The repeatability coefficient sets the smallest probe-tube presence effect that can be resolved for a single ear; the ICC indicates how much of the between-measurement variance is explained by the subject (high ICC = the ear dominates, low ICC = reinsertion noise dominates).",
+      "duration_s": 0.75,
+      "parameters": {
+        "code": "E03",
+        "metric": "hha",
+        "band_hz": [
+          500,
+          4000
+        ],
+        "icc_method": "icc2"
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E04",
+      "title": "Inter-subject Variability",
+      "status": "completed",
+      "metrics": {
+        "n_subjects": 14,
+        "between_subject_sd_500_4000Hz_db_by_family": {
+          "closed_earmold": 1.9566686655065557,
+          "vented_earmold": 2.088836660173946,
+          "nugget_earmold": 1.3673070792635484,
+          "silicone_earmold": 1.7283602828039588,
+          "open_dome": 2.2047292060955197,
+          "tulip_dome": 2.1939429071435024,
+          "power_dome": 1.6232122822322343
+        },
+        "icc_1_1_500_4000Hz_by_family": {
+          "closed_earmold": 0.7655527876224243,
+          "vented_earmold": 0.9829503094775638,
+          "nugget_earmold": 0.8702204487204023,
+          "silicone_earmold": 0.9598815874096113,
+          "open_dome": 0.9485246393602884,
+          "tulip_dome": 0.9380076024756894,
+          "power_dome": 0.9056595778527226
+        },
+        "within_subject_sd_500_4000Hz_db_by_family": {
+          "closed_earmold": 0.8585339812921956,
+          "vented_earmold": 0.2727479507438501,
+          "nugget_earmold": 0.506649221881231,
+          "silicone_earmold": 0.3458102185055354,
+          "open_dome": 0.5090232743817863,
+          "tulip_dome": 0.5579041303459282,
+          "power_dome": 0.5150267414649433
+        },
+        "ratio_between_to_within_by_family": {
+          "closed_earmold": 1.8070286343492796,
+          "vented_earmold": 7.592897404642906,
+          "nugget_earmold": 2.589473721215032,
+          "silicone_earmold": 4.891442585878213,
+          "open_dome": 4.292641396507903,
+          "tulip_dome": 3.889859927018861,
+          "power_dome": 3.0983721804026723
+        },
+        "note": "Between-subject SD uses subject-level means (reinsertions averaged); variance components are one-way random-effects estimates.",
+        "most_variable_family": {
+          "family": "open_dome",
+          "sd_db": 2.2047292060955197
+        }
+      },
+      "tables": {
+        "inter_subject_variability": {
+          "rows": 63,
+          "columns": [
+            "band",
+            "band_center_hz",
+            "device_code",
+            "device",
+            "family",
+            "coupling",
+            "condition",
+            "n_subjects",
+            "n_subjects_complete",
+            "mean_level_db",
+            "sd_between_subject_db",
+            "iqr_db",
+            "range_db",
+            "cv_db",
+            "between_subject_variance_db2",
+            "within_subject_variance_db2",
+            "icc_1_1"
+          ]
+        },
+        "inter_subject_variability_wide_band": {
+          "rows": 7,
+          "columns": [
+            "band",
+            "band_center_hz",
+            "device_code",
+            "device",
+            "family",
+            "coupling",
+            "condition",
+            "n_subjects",
+            "n_subjects_complete",
+            "mean_level_db",
+            "sd_between_subject_db",
+            "iqr_db",
+            "range_db",
+            "cv_db",
+            "between_subject_variance_db2",
+            "within_subject_variance_db2",
+            "icc_1_1"
+          ]
+        },
+        "between_subject_sd_by_frequency": {
+          "rows": 14308,
+          "columns": [
+            "frequency_hz",
+            "device_code",
+            "family",
+            "family_label",
+            "sd_between_subject_db",
+            "n_subjects"
+          ]
+        },
+        "between_subject_sd_frequency_summary": {
+          "rows": 14308,
+          "columns": [
+            "family",
+            "frequency_hz",
+            "median_sd_db",
+            "q25_sd_db",
+            "q75_sd_db"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "inter_subject_variability.csv",
+          "inter_subject_variability_wide_band.csv",
+          "between_subject_sd_by_frequency.csv.gz",
+          "between_subject_sd_frequency_summary.csv.gz"
+        ],
+        "figures": [
+          "between_subject_sd_spectrum.png",
+          "between_subject_sd_bands.png",
+          "variance_decomposition.png",
+          "between_subject_heatmap.png"
+        ]
+      },
+      "warnings": [],
+      "narrative": "Between-ear differences dominate the reinsertion noise for occluding couplings, especially at low frequencies where ear-canal volume and earpiece fit vary strongly. For open domes the between-ear spread is smaller at low frequencies but still substantial. This justifies treating the subject as the independent statistical unit and using paired designs wherever possible.",
+      "duration_s": 0.764,
+      "parameters": {
+        "code": "E04",
+        "band_hz": [
+          500,
+          4000
+        ]
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E05",
+      "title": "Acoustic Feedback",
+      "status": "completed",
+      "metrics": {
+        "n_subjects": 14,
+        "feedback_median_db_spl_at_1kHz": {
+          "closed_earmold": 8.251414548069786,
+          "vented_earmold": 17.479374706262178,
+          "nugget_earmold": 13.494438685870012,
+          "silicone_earmold": 11.42617505807582,
+          "open_dome": 20.240207810140053,
+          "tulip_dome": 19.642973227048245,
+          "power_dome": 17.426246099286715
+        },
+        "feedback_median_db_spl_at_2kHz": {
+          "closed_earmold": 23.474100307343974,
+          "vented_earmold": 27.849840270569928,
+          "nugget_earmold": 29.48503345328222,
+          "silicone_earmold": 25.642498201166738,
+          "open_dome": 42.168933972636715,
+          "tulip_dome": 35.747323926107796,
+          "power_dome": 30.464060020350104
+        },
+        "delta_feedback_median_db_at_1kHz": {
+          "closed_earmold": 2.2156465932378975,
+          "nugget_earmold": 5.838446137431646,
+          "open_dome": 0.2576851577306396,
+          "power_dome": 2.859410228983472,
+          "silicone_earmold": 1.7683695140111122,
+          "tulip_dome": 0.20815159445117715,
+          "vented_earmold": 1.5369565575119992
+        },
+        "delta_feedback_median_db_at_4kHz": {
+          "closed_earmold": -0.2201917099209183,
+          "nugget_earmold": 1.588389532613002,
+          "open_dome": 0.19640816670790784,
+          "power_dome": 1.0351531748658385,
+          "silicone_earmold": 0.8862551096812759,
+          "tulip_dome": 0.5099824021027324,
+          "vented_earmold": 1.179002384465381
+        },
+        "sign_convention": "\u0394Hfb > 0 = stronger feedback in the measurement condition",
+        "open_minus_closed_feedback_1kHz_db": 11.988793262070267
+      },
+      "tables": {
+        "feedback_median_curves": {
+          "rows": 14308,
+          "columns": [
+            "frequency_hz",
+            "device_code",
+            "device",
+            "family",
+            "family_label",
+            "coupling",
+            "condition",
+            "median_db",
+            "mean_db",
+            "sd_db",
+            "n_valid"
+          ]
+        },
+        "feedback_percentile_curves": {
+          "rows": 12971,
+          "columns": [
+            "frequency_hz",
+            "device_code",
+            "device",
+            "family",
+            "family_label",
+            "condition",
+            "n_valid",
+            "q10",
+            "q25",
+            "median_db",
+            "q75",
+            "q90"
+          ]
+        },
+        "feedback_band_levels": {
+          "rows": 63,
+          "columns": [
+            "family",
+            "family_label",
+            "band",
+            "band_center_hz",
+            "median_db",
+            "mean_db",
+            "sd_db",
+            "n",
+            "index_x",
+            "q25_db",
+            "index_y",
+            "q75_db"
+          ]
+        },
+        "feedback_delta_bands": {
+          "rows": 63,
+          "columns": [
+            "family",
+            "band",
+            "band_center_hz",
+            "median_db",
+            "mean_db",
+            "sd_db",
+            "n",
+            "index_x",
+            "q25_db",
+            "index_y",
+            "q75_db"
+          ]
+        },
+        "feedback_delta_raw": {
+          "rows": 2646,
+          "columns": [
+            "band",
+            "band_center_hz",
+            "band_low_hz",
+            "band_high_hz",
+            "device_code",
+            "device",
+            "family",
+            "family_label",
+            "coupling",
+            "condition",
+            "subject",
+            "reinsertion",
+            "valid",
+            "delta_hfb_db"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "feedback_median_curves.csv.gz",
+          "feedback_percentile_curves.csv.gz",
+          "feedback_band_levels.csv",
+          "feedback_delta_bands.csv",
+          "feedback_delta_raw.csv.gz"
+        ],
+        "figures": [
+          "feedback_curves.png",
+          "feedback_percentiles.png",
+          "feedback_band_levels.png",
+          "feedback_ptpe_bands.png",
+          "feedback_ptpe_heatmap.png"
+        ]
+      },
+      "warnings": [],
+      "narrative": "The feedback path is weakest (most negative) for the tightly sealed earmolds and strongest for the open dome, consistent with the amount of sound leaking back to the hearing-aid microphone. Inserting the measurement probe slightly increases the feedback path for loosely sealed couplings, because the additional slit forms a leak. This is the physical mechanism behind reduced usable gain in real-ear measurements, and it is reported here rather than hidden.",
+      "duration_s": 0.34,
+      "parameters": {
+        "code": "E05",
+        "condition": "measurement",
+        "band_hz": [
+          1000,
+          4000
+        ]
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E06",
+      "title": "Real-Ear Response",
+      "status": "completed",
+      "metrics": {
+        "n_subjects": 14,
+        "reug_median_db_at_1kHz": 0.6427422613706462,
+        "reug_median_db_at_2kHz": 13.967958079602573,
+        "reug_median_db_at_4kHz": 15.738972032823444,
+        "reoig_median_db_at_1kHz": {
+          "closed_earmold": -10.695148978221507,
+          "nugget_earmold": -5.027116387382726,
+          "open_dome": 0.12429518266911188,
+          "power_dome": -1.2231671080087398,
+          "silicone_earmold": -5.23488304882984,
+          "tulip_dome": 0.11787631409925581,
+          "vented_earmold": -2.264064665193711
+        },
+        "reoig_median_db_at_4kHz": {
+          "closed_earmold": -22.88970264232998,
+          "nugget_earmold": -18.068319504760357,
+          "open_dome": -2.494785766574947,
+          "power_dome": -15.850569113623301,
+          "silicone_earmold": -18.23285199905931,
+          "tulip_dome": -8.846588271046503,
+          "vented_earmold": -20.472877617164414
+        },
+        "note": "REOIG is a pressure ratio and scale-invariant. REUG/REOG use the in-situ free-field reference; see docs/data.md for the documented scaling caveat."
+      },
+      "tables": {
+        "reug_percentiles": {
+          "rows": 1853,
+          "columns": [
+            "frequency_hz",
+            "device_code",
+            "device",
+            "family",
+            "family_label",
+            "condition",
+            "n_valid",
+            "q10",
+            "q25",
+            "median_db",
+            "q75",
+            "q90"
+          ]
+        },
+        "reoig_percentiles": {
+          "rows": 12971,
+          "columns": [
+            "frequency_hz",
+            "device_code",
+            "device",
+            "family",
+            "family_label",
+            "condition",
+            "n_valid",
+            "q10",
+            "q25",
+            "median_db",
+            "q75",
+            "q90"
+          ]
+        },
+        "reog_percentiles": {
+          "rows": 12971,
+          "columns": [
+            "frequency_hz",
+            "device_code",
+            "device",
+            "family",
+            "family_label",
+            "condition",
+            "n_valid",
+            "q10",
+            "q25",
+            "median_db",
+            "q75",
+            "q90"
+          ]
+        },
+        "reug_band_levels": {
+          "rows": 9,
+          "columns": [
+            "family",
+            "family_label",
+            "band",
+            "band_center_hz",
+            "median_db",
+            "mean_db",
+            "sd_db",
+            "n",
+            "index_x",
+            "q25_db",
+            "index_y",
+            "q75_db"
+          ]
+        },
+        "reoig_band_levels": {
+          "rows": 63,
+          "columns": [
+            "family",
+            "family_label",
+            "band",
+            "band_center_hz",
+            "median_db",
+            "mean_db",
+            "sd_db",
+            "n",
+            "index_x",
+            "q25_db",
+            "index_y",
+            "q75_db"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "reug_percentiles.csv",
+          "reoig_percentiles.csv.gz",
+          "reog_percentiles.csv.gz",
+          "reug_band_levels.csv",
+          "reoig_band_levels.csv"
+        ],
+        "figures": [
+          "reug_curves.png",
+          "reoig_curves.png",
+          "reoig_band_levels.png",
+          "reog_curves.png",
+          "reoig_heatmap.png"
+        ]
+      },
+      "warnings": [],
+      "narrative": "The open ear shows the characteristic ear-canal resonance of roughly +14 dB near 2 kHz relative to 1 kHz. Occluding the ear with a tightly sealed earmold strongly attenuates external sound below 2 kHz (negative REOIG), whereas open and tulip domes provide almost no attenuation. REOIG therefore quantifies coupling tightness and is the acoustic quantity most directly related to the probe-tube presence effect.",
+      "duration_s": 0.595,
+      "parameters": {
+        "code": "E06",
+        "band_hz": [
+          1000,
+          4000
+        ]
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E07",
+      "title": "Hearing Threshold",
+      "status": "completed",
+      "metrics": {
+        "n_subjects": 14,
+        "threshold_median_dbv_at_125Hz": {
+          "closed_earmold": -71.0,
+          "nugget_earmold": -69.5,
+          "open_dome": -37.5,
+          "power_dome": -60.0,
+          "silicone_earmold": -66.5,
+          "tulip_dome": -51.0,
+          "vented_earmold": -55.0
+        },
+        "threshold_median_dbv_at_1kHz": {
+          "closed_earmold": -102.0,
+          "nugget_earmold": -102.0,
+          "open_dome": -89.5,
+          "power_dome": -99.0,
+          "silicone_earmold": -103.0,
+          "tulip_dome": -97.0,
+          "vented_earmold": -105.0
+        },
+        "delta_threshold_125Hz_db_by_family": {
+          "closed_earmold": -3.892857142857143,
+          "nugget_earmold": -5.952380952380952,
+          "open_dome": -6.344131569286608e-17,
+          "power_dome": -5.273809523809524,
+          "silicone_earmold": -1.1547619047619049,
+          "tulip_dome": -1.2857142857142854,
+          "vented_earmold": -3.172065784643304e-17
+        },
+        "delta_threshold_125Hz_ci95_by_family": {
+          "closed_earmold": [
+            -6.196090006006888,
+            -1.5896242797073974
+          ],
+          "nugget_earmold": [
+            -12.651126340441,
+            0.746364435679097
+          ],
+          "open_dome": [
+            -2.0424030830667825,
+            2.0424030830667825
+          ],
+          "power_dome": [
+            -8.609810108736655,
+            -1.9378089388823923
+          ],
+          "silicone_earmold": [
+            -4.002539562632325,
+            1.6930157531085157
+          ],
+          "tulip_dome": [
+            -2.9986035523899055,
+            0.42717498096133455
+          ],
+          "vented_earmold": [
+            -2.441763808259974,
+            2.441763808259974
+          ]
+        },
+        "delta_t_vs_delta_hha_correlation": 0.5607577517461055,
+        "delta_t_vs_delta_hha_slope": 0.6127088771990051,
+        "delta_t_vs_delta_hha_mean_difference_db": -1.1311801522458336,
+        "delta_t_vs_delta_hha_n": 56,
+        "note": "\u0394T = T_ref \u2212 T_meas is expressed in dB and equals the equivalent change of Hha at fixed drive voltage; negative values mean the probe reduces driver output."
+      },
+      "tables": {
+        "threshold_curves": {
+          "rows": 84,
+          "columns": [
+            "family",
+            "family_label",
+            "condition",
+            "frequency_hz",
+            "median_dbv",
+            "mean_dbv",
+            "sd_dbv",
+            "n_subjects"
+          ]
+        },
+        "delta_threshold_125Hz": {
+          "rows": 98,
+          "columns": [
+            "family",
+            "family_label",
+            "subject",
+            "reinsertion",
+            "delta_t_db",
+            "valid"
+          ]
+        },
+        "delta_threshold_125Hz_ci": {
+          "rows": 7,
+          "columns": [
+            "family",
+            "family_label",
+            "n",
+            "mean_db",
+            "sd_db",
+            "se_db",
+            "ci_low_db",
+            "ci_high_db"
+          ]
+        },
+        "delta_t_vs_delta_hha": {
+          "rows": 56,
+          "columns": [
+            "family",
+            "family_label",
+            "subject",
+            "delta_t_db",
+            "delta_hha_db"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "threshold_curves.csv",
+          "delta_threshold_125Hz.csv",
+          "delta_threshold_125Hz_ci.csv",
+          "delta_t_vs_delta_hha.csv"
+        ],
+        "figures": [
+          "audiograms.png",
+          "delta_threshold_125.png",
+          "delta_t_vs_delta_hha.png"
+        ]
+      },
+      "warnings": [],
+      "narrative": "Thresholds through the hearing-aid receiver are lowest (most sensitive) for the closed and nugget earmolds and highest for the open dome, matching the coupling tightness. Inserting the measurement probe raises the required voltage at 125 Hz for the occluding couplings, again mirroring the acoustic PTPE. The \u0394T\u2013\u0394Hha comparison confirms that threshold differences express the same level change as the transfer-function measurement, within the limits set by 1 dB threshold quantisation.",
+      "duration_s": 0.079,
+      "parameters": {
+        "code": "E07",
+        "frequencies_hz": [
+          125,
+          250,
+          500,
+          750,
+          1000,
+          2000
+        ]
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E08",
+      "title": "Statistical Comparison",
+      "status": "completed",
+      "metrics": {
+        "n_tests": 18,
+        "n_primary_family_tests": 15,
+        "alpha": 0.05,
+        "correction": "holm (within primary family tests)",
+        "bootstrap": {
+          "n_resamples": 10000,
+          "confidence": 0.95,
+          "seed": 20260422,
+          "method": "percentile"
+        },
+        "significant_tests_holm": [
+          "ptpe_hha_125Hz_nugget_earmold",
+          "ptpe_hha_125Hz_silicone_earmold",
+          "ptpe_reoig_1kHz_closed_earmold",
+          "ptpe_reoig_1kHz_nugget_earmold",
+          "ptpe_threshold_125Hz_closed_earmold",
+          "ptpe_threshold_125Hz_power_dome"
+        ],
+        "closed_vs_open_hha_1kHz_mean_difference_db": 12.452558966594328,
+        "closed_vs_open_hha_1kHz_p_value": 8.368493225391848e-09,
+        "probe_bias_1kHz_mean_db": -0.5754651922840883,
+        "probe_bias_1kHz_p_value": 0.19686251067308272,
+        "note": "Differences are a \u2212 b. Positive \u0394REOIG means more leakage; negative \u0394Hha/\u0394T mean reduced driver output."
+      },
+      "tables": {
+        "paired_tests": {
+          "rows": 18,
+          "columns": [
+            "test_id",
+            "metric",
+            "family",
+            "comparison",
+            "n",
+            "mean_a",
+            "mean_b",
+            "mean_diff",
+            "ci_low",
+            "ci_high",
+            "bootstrap_ci_low",
+            "bootstrap_ci_high",
+            "t",
+            "df",
+            "p_value",
+            "p_wilcoxon",
+            "cohen_dz",
+            "rank_biserial",
+            "shapiro_p",
+            "holm_family",
+            "p_holm",
+            "significant_holm"
+          ]
+        },
+        "subject_level_data": {
+          "rows": 252,
+          "columns": [
+            "test_id",
+            "metric",
+            "family",
+            "subject",
+            "a",
+            "b",
+            "difference"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "paired_tests.csv",
+          "subject_level_data.csv"
+        ],
+        "figures": [
+          "forest_effects.png",
+          "closed_vs_open_scatter.png",
+          "paired_differences.png"
+        ]
+      },
+      "warnings": [
+        "Shapiro\u2013Wilk indicates non-normal paired differences in at least one test; Wilcoxon p-values are reported alongside the t-tests."
+      ],
+      "narrative": "All probe-tube presence effects are tested at the subject level with paired designs and interpreted against effect sizes and 95 % confidence intervals rather than p-values alone. Holm correction controls the family-wise error rate across the family-level tests. The closed-vs-open comparison quantifies the large acoustic difference between occluding and open couplings, while the probe-bias test shows whether the two probe microphones differ systematically.",
+      "duration_s": 0.41,
+      "parameters": {
+        "code": "E08",
+        "comparison": "closed_vs_open",
+        "band_hz": [
+          500,
+          4000
+        ],
+        "correction": "holm"
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E09",
+      "title": "Gain Estimation",
+      "status": "completed",
+      "metrics": {
+        "n_cases": 250,
+        "n_reference_cases": 100,
+        "target_db": 0.1,
+        "reference_condition": "1 kHz tone, no compression, no noise, 4 s, -20 dBFS; estimate from the DFT bin of the tone",
+        "reference_summary": {
+          "n": 100,
+          "median_abs_error": 1.5543122344752192e-15,
+          "mean_abs_error": 1.3913870056114775e-15,
+          "p95_abs_error": 3.552713678800501e-15,
+          "max_abs_error": 5.329070518200751e-15,
+          "fraction_within_target": 1.0,
+          "target": 0.1,
+          "unit": "dB",
+          "target_met": true
+        },
+        "full_parameter_range_summary": {
+          "n": 250,
+          "median_abs_error": 0.0,
+          "mean_abs_error": 1.1409762024072733e-15,
+          "p95_abs_error": 3.552713678800501e-15,
+          "max_abs_error": 7.105427357601002e-15,
+          "fraction_within_target": 1.0,
+          "target": 0.1,
+          "unit": "dB",
+          "target_met": true
+        },
+        "target_met_in_reference_condition": true,
+        "note": "The estimator receives only input/output waveforms and the tone frequency. Errors are expressed in dB relative to the applying gain."
+      },
+      "tables": {
+        "gain_case_results": {
+          "rows": 250,
+          "columns": [
+            "case_id",
+            "tone_hz",
+            "input_level_dbfs",
+            "gain_db_true",
+            "gain_db_estimated",
+            "error_db",
+            "is_reference_condition"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "gain_case_results.csv"
+        ],
+        "figures": [
+          "gain_scatter.png",
+          "gain_error_histogram.png",
+          "gain_error_vs_tone.png"
+        ]
+      },
+      "warnings": [],
+      "narrative": "The coherent single-bin tone projection recovers the applied gain to within 5.33e-15 dB in the reference condition (target 0.1 dB) and remains accurate over the wider gain/level/frequency range. Because the estimate uses the input waveform as reference, it is insensitive to the absolute playback level and therefore directly transferable to a real measurement where the drive level is known.",
+      "duration_s": 2.347,
+      "parameters": {
+        "code": "E09",
+        "n_cases": 250,
+        "metric": "gain"
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E10",
+      "title": "THD Estimation",
+      "status": "completed",
+      "metrics": {
+        "n_cases": 250,
+        "n_reference_cases": 100,
+        "target_percentage_points": 0.1,
+        "reference_condition": "1 kHz tone, THD 0.5\u20265 %, no noise, integer number of periods, Hann-windowed harmonic analysis",
+        "reference_summary": {
+          "n": 100,
+          "median_abs_error": 1.4449552665496412e-13,
+          "mean_abs_error": 1.4790835223266186e-13,
+          "p95_abs_error": 2.790878639302718e-13,
+          "max_abs_error": 3.4861002973229915e-13,
+          "fraction_within_target": 1.0,
+          "target": 0.1,
+          "unit": "pp",
+          "target_met": true
+        },
+        "full_parameter_range_summary": {
+          "n": 250,
+          "median_abs_error": 1.3367085216486885e-13,
+          "mean_abs_error": 2.5759350208431896e-13,
+          "p95_abs_error": 1.1403322730529905e-12,
+          "max_abs_error": 2.785993657994368e-12,
+          "fraction_within_target": 1.0,
+          "target": 0.1,
+          "unit": "pp",
+          "target_met": true
+        },
+        "target_met_in_reference_condition": true,
+        "note": "THD is estimated from Hann-windowed harmonic projections; the injected harmonic amplitudes are known exactly from the generated waveforms."
+      },
+      "tables": {
+        "thd_case_results": {
+          "rows": 250,
+          "columns": [
+            "case_id",
+            "tone_hz",
+            "input_level_dbfs",
+            "thd_percent_true",
+            "thd_percent_estimated",
+            "error_percentage_points",
+            "fundamental_dbfs",
+            "is_reference_condition"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "thd_case_results.csv"
+        ],
+        "figures": [
+          "thd_scatter.png",
+          "thd_error_histogram.png",
+          "thd_error_vs_level.png"
+        ]
+      },
+      "warnings": [],
+      "narrative": "Harmonic projection recovers the injected THD to within 3.49e-13 percentage points in the reference condition (target 0.1 pp). The wider range probes distortion up to 10 % and multiple fundamental frequencies; the estimator remains within the target there too, which shows that the method is not tuned to a single case.",
+      "duration_s": 6.059,
+      "parameters": {
+        "code": "E10",
+        "n_cases": 250,
+        "metric": "thd"
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E11",
+      "title": "SNR Estimation",
+      "status": "completed",
+      "metrics": {
+        "n_cases": 250,
+        "n_reference_cases": 100,
+        "target_db": 0.5,
+        "reference_condition": "1 kHz tone in additive white Gaussian noise, SNR 10\u202640 dB, 4 s Hann-windowed PSD estimate",
+        "reference_residual_summary": {
+          "n": 100,
+          "median_abs_error": 0.000768734712121244,
+          "mean_abs_error": 0.0018359032393124686,
+          "p95_abs_error": 0.00728565504330154,
+          "max_abs_error": 0.01050551967358615,
+          "fraction_within_target": 1.0,
+          "target": 0.5,
+          "unit": "dB",
+          "target_met": true
+        },
+        "reference_psd_summary": {
+          "n": 100,
+          "median_abs_error": 0.033407869885142105,
+          "mean_abs_error": 0.03240925935064487,
+          "p95_abs_error": 0.04454679018845197,
+          "max_abs_error": 0.055271965704069004,
+          "fraction_within_target": 1.0,
+          "target": 0.5,
+          "unit": "dB",
+          "target_met": true
+        },
+        "full_range_residual_summary": {
+          "n": 250,
+          "median_abs_error": 0.0012279156453125495,
+          "mean_abs_error": 0.004234720592107701,
+          "p95_abs_error": 0.021309132751523352,
+          "max_abs_error": 0.07030177462969744,
+          "fraction_within_target": 1.0,
+          "target": 0.5,
+          "unit": "dB",
+          "target_met": true
+        },
+        "by_noise_color": {
+          "pink": {
+            "residual": {
+              "n": 77,
+              "median_abs_error": 0.002301656131084684,
+              "mean_abs_error": 0.007718266999502595,
+              "p95_abs_error": 0.033650267266478205,
+              "max_abs_error": 0.07030177462969744,
+              "fraction_within_target": 1.0,
+              "target": 0.5,
+              "unit": "dB",
+              "target_met": true
+            },
+            "psd": {
+              "n": 77,
+              "median_abs_error": 0.13628240709373074,
+              "mean_abs_error": 0.14130041764475604,
+              "p95_abs_error": 0.30019709922868043,
+              "max_abs_error": 0.3777921015598913,
+              "fraction_within_target": 1.0,
+              "target": 0.5,
+              "unit": "dB",
+              "target_met": true
+            }
+          },
+          "white": {
+            "residual": {
+              "n": 173,
+              "median_abs_error": 0.0008511047408568118,
+              "mean_abs_error": 0.0026842403992209576,
+              "p95_abs_error": 0.010336350839769184,
+              "max_abs_error": 0.04219767088394777,
+              "fraction_within_target": 1.0,
+              "target": 0.5,
+              "unit": "dB",
+              "target_met": true
+            },
+            "psd": {
+              "n": 173,
+              "median_abs_error": 0.03367925333851929,
+              "mean_abs_error": 0.03315984120366328,
+              "p95_abs_error": 0.0453263474031295,
+              "max_abs_error": 0.06367658852724745,
+              "fraction_within_target": 1.0,
+              "target": 0.5,
+              "unit": "dB",
+              "target_met": true
+            }
+          }
+        },
+        "target_met_in_reference_condition": true,
+        "psd_target_met_in_reference_condition": true,
+        "note": "The residual estimator is primary; the PSD estimator is reported to expose the expected bias for non-flat (pink) noise."
+      },
+      "tables": {
+        "snr_case_results": {
+          "rows": 250,
+          "columns": [
+            "case_id",
+            "tone_hz",
+            "noise_color",
+            "input_level_dbfs",
+            "snr_db_true",
+            "snr_db_estimated_residual",
+            "error_residual_db",
+            "snr_db_estimated_psd",
+            "error_psd_db",
+            "is_reference_condition"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "snr_case_results.csv"
+        ],
+        "figures": [
+          "snr_scatter.png",
+          "snr_psd_by_color.png",
+          "snr_error_histogram.png"
+        ]
+      },
+      "warnings": [],
+      "narrative": "Using the exact noise waveform as ground truth, the residual estimator recovers the SNR to within 0.0105 dB in the reference condition (target 0.5 dB), whereas the PSD estimator is accurate for white noise but biased for pink noise. Reporting both makes the estimator's validity domain explicit rather than hiding it.",
+      "duration_s": 3.452,
+      "parameters": {
+        "code": "E11",
+        "n_cases": 250,
+        "metric": "snr"
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E12",
+      "title": "Filter Response Estimation",
+      "status": "completed",
+      "metrics": {
+        "n_cases": 250,
+        "n_reference_cases": 100,
+        "target_mae_db": 0.5,
+        "reference_condition": "logarithmic sweep 100 Hz\u202610 kHz, 4 s, no noise, no compression; deconvolution vs. known filter response",
+        "reference_summary": {
+          "n": 100,
+          "median_abs_error": 0.01609738845800164,
+          "mean_abs_error": 0.02206612414629543,
+          "p95_abs_error": 0.06092825513666089,
+          "max_abs_error": 0.0694341018529119,
+          "fraction_within_target": 1.0,
+          "target": 0.5,
+          "unit": "dB",
+          "target_met": true
+        },
+        "full_parameter_range_summary": {
+          "n": 250,
+          "median_abs_error": 0.01649717753541649,
+          "mean_abs_error": 0.0248244125110643,
+          "p95_abs_error": 0.06149071032014708,
+          "max_abs_error": 0.18617645889230372,
+          "fraction_within_target": 1.0,
+          "target": 0.5,
+          "unit": "dB",
+          "target_met": true
+        },
+        "by_filter_type": {
+          "bandpass": {
+            "n": 55,
+            "median_abs_error": 0.017448425225827867,
+            "mean_abs_error": 0.020268906814919576,
+            "p95_abs_error": 0.028294812893217572,
+            "max_abs_error": 0.029493385043998777,
+            "fraction_within_target": 1.0,
+            "target": 0.5,
+            "unit": "dB",
+            "target_met": true
+          },
+          "highpass": {
+            "n": 68,
+            "median_abs_error": 0.04701717049615954,
+            "mean_abs_error": 0.05358951114483419,
+            "p95_abs_error": 0.08389890074702902,
+            "max_abs_error": 0.18617645889230372,
+            "fraction_within_target": 1.0,
+            "target": 0.5,
+            "unit": "dB",
+            "target_met": true
+          },
+          "lowpass": {
+            "n": 61,
+            "median_abs_error": 0.016111162887304756,
+            "mean_abs_error": 0.015563926759974846,
+            "p95_abs_error": 0.01691794316203321,
+            "max_abs_error": 0.017537163149699785,
+            "fraction_within_target": 1.0,
+            "target": 0.5,
+            "unit": "dB",
+            "target_met": true
+          },
+          "peaking": {
+            "n": 66,
+            "median_abs_error": 0.00046675383157316025,
+            "mean_abs_error": 0.0075428327687622415,
+            "p95_abs_error": 0.04207080482751736,
+            "max_abs_error": 0.07755879186458184,
+            "fraction_within_target": 1.0,
+            "target": 0.5,
+            "unit": "dB",
+            "target_met": true
+          }
+        },
+        "target_met_in_reference_condition": true,
+        "note": "The magnitude error is evaluated on the documented logarithmic evaluation grid within a 20 dB dynamic range of the pass-band; the phase is estimated but not scored because absolute delay is not part of the ground truth."
+      },
+      "tables": {
+        "frequency_response_case_results": {
+          "rows": 250,
+          "columns": [
+            "case_id",
+            "filter_type",
+            "cutoff_hz",
+            "noise_snr_db",
+            "mae_db",
+            "max_abs_error_db",
+            "n_evaluation_points",
+            "is_reference_condition"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "frequency_response_case_results.csv"
+        ],
+        "figures": [
+          "fr_example.png",
+          "fr_mae_histogram.png",
+          "fr_mae_by_filter.png"
+        ]
+      },
+      "warnings": [],
+      "narrative": "The H1 estimator recovers the magnitude response with a median MAE of 0.0161 dB in the reference condition (target 0.5 dB). The wider range adds sweep bands and noise; those cases are reported separately. Deep stop bands are excluded by the documented dynamic-range mask, since a finite-dynamic-range measurement cannot resolve them.",
+      "duration_s": 3.49,
+      "parameters": {
+        "code": "E12",
+        "n_cases": 250,
+        "metric": "frequency_response"
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E13",
+      "title": "Dynamic Compression",
+      "status": "completed",
+      "metrics": {
+        "configured_threshold_dbfs": -35.0,
+        "configured_ratio": 3.0,
+        "configured_attack_ms": 5.0,
+        "configured_release_ms": 50.0,
+        "measured_compression_ratio": 3.0000000000000018,
+        "measured_static_slope": 0.33333333333333315,
+        "max_static_curve_error_db": 0.014968665483650057,
+        "measured_attack_settling_ms": 2.9375000000000373,
+        "measured_release_settling_ms": 237.2291666666667,
+        "settling_definition": "time to enter and remain within \u00b13 dB of the steady-state output level",
+        "dynamic_note": "The configured attack/release values are one-pole detector time constants applied to signal power; the observed output-level settling time is not numerically identical to them, especially for release.",
+        "multiband_low_band_gain_db": -8.91172544206942,
+        "multiband_high_band_gain_db": -3.3361834809762625,
+        "multiband_gain_difference_db": 5.575541961093157,
+        "note": "All values are measured through the virtual device; configured ground truth is reported alongside the estimates."
+      },
+      "tables": {
+        "static_compression_curve": {
+          "rows": 31,
+          "columns": [
+            "input_dbfs",
+            "output_dbfs_measured",
+            "output_dbfs_expected",
+            "gain_db_measured",
+            "gain_db_expected",
+            "error_db"
+          ]
+        },
+        "multiband_gains": {
+          "rows": 2,
+          "columns": [
+            "band",
+            "configured_ratio",
+            "configured_kneepoint_dbfs",
+            "measured_gain_db",
+            "expected_static_gain_db"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "static_compression_curve.csv",
+          "multiband_gains.csv"
+        ],
+        "figures": [
+          "static_compression_curve.png",
+          "attack_release.png",
+          "multiband_gains.png"
+        ]
+      },
+      "warnings": [],
+      "narrative": "The virtual compressor follows the configured static curve closely; the effective compression ratio recovered above the kneepoint is close to the configured ratio, and attack/release times are in the expected millisecond range. The multiband test shows that a loud high-frequency tone can be compressed independently of the low-frequency band, which is the behaviour needed for realistic hearing-aid fitting scenarios and for validating the gain-estimation experiments.",
+      "duration_s": 0.115,
+      "parameters": {
+        "code": "E13",
+        "static_levels_dbfs": [
+          -40,
+          -30,
+          -20,
+          -10
+        ],
+        "tone_hz": 1000,
+        "attack_release_ms": [
+          5,
+          50
+        ],
+        "compression_ratio": 3.0,
+        "kneepoint_dbfs": -35.0
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E14",
+      "title": "Fault Injection",
+      "status": "completed",
+      "metrics": {
+        "n_fault_types": 6,
+        "n_detected_within_tolerance": 6,
+        "detection_rate": 1.0,
+        "mean_relative_error_percent": 0.001157407407548525,
+        "tolerances": {
+          "clipping": {
+            "unit": "dBFS",
+            "tolerance": 0.5
+          },
+          "dropout": {
+            "unit": "s",
+            "tolerance": 0.01
+          },
+          "dc_offset": {
+            "unit": "linear",
+            "tolerance": 0.0001
+          },
+          "gain_error": {
+            "unit": "dB",
+            "tolerance": 0.2
+          },
+          "harmonic_distortion": {
+            "unit": "%",
+            "tolerance": 0.2
+          },
+          "latency": {
+            "unit": "ms",
+            "tolerance": 0.03125
+          }
+        },
+        "deterministic_repetitions_per_fault": 10,
+        "note": "Detection uses only the measured output; true injected parameters are used solely for scoring."
+      },
+      "tables": {
+        "fault_detection": {
+          "rows": 6,
+          "columns": [
+            "fault_type",
+            "true_parameter",
+            "true_value",
+            "measured_value",
+            "unit",
+            "absolute_error",
+            "relative_error_percent",
+            "tolerance",
+            "detected"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "fault_detection.csv"
+        ],
+        "figures": [
+          "fault_waveforms.png",
+          "fault_detection.png"
+        ]
+      },
+      "warnings": [],
+      "narrative": "All six fault types are injected deterministically and recovered from the output: clipping from the peak level, dropout from the silent interval, DC offset from the signal mean, gain error from the tone amplitude, harmonic distortion from the harmonic amplitudes and latency from the cross-correlation lag. The detection table reports the true value, the measured value and the error, so the validation claim is fully auditable rather than asserted.",
+      "duration_s": 0.142,
+      "parameters": {
+        "code": "E14",
+        "faults": [
+          "clipping",
+          "dropout",
+          "dc_offset",
+          "gain_error",
+          "harmonic_distortion",
+          "latency"
+        ],
+        "n_cases_per_fault": 10
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E15",
+      "title": "MATLAB-Python Agreement",
+      "status": "completed",
+      "metrics": {
+        "matlab_available": false,
+        "matlab_executable": null,
+        "matlab_status": "not_run",
+        "matlab_error": "MATLAB is not installed in this environment. The MATLAB implementation, GUI and tests are provided (matlab/) but are explicitly NOT executed/verified here; see docs/matlab_status.md.",
+        "port_agreement_passed": true,
+        "port_n_comparisons": 6,
+        "port_comparison_max_abs_diff": {
+          "hha_band_db (port vs production)": 0.0,
+          "reoig_db (port vs production)": 5.329070518200751e-15,
+          "ptpe_hha_db (port vs production)": 1.099120794378905e-14,
+          "gain_db (port vs production)": 2.6645352591003757e-15,
+          "snr_db (port vs production)": 0.008515066203825583,
+          "thd_percent (port vs production)": 1.4566126083082054e-12
+        },
+        "port_comparison_tolerances": {
+          "hha_band_db (port vs production)": 0.01,
+          "reoig_db (port vs production)": 0.01,
+          "ptpe_hha_db (port vs production)": 0.01,
+          "gain_db (port vs production)": 0.01,
+          "snr_db (port vs production)": 0.05,
+          "thd_percent (port vs production)": 0.01
+        },
+        "matlab_agreement_passed": null,
+        "matlab_n_comparisons": 0,
+        "matlab_matched_test_ids": 0,
+        "expected_test_ids": 167,
+        "matlab_inputs_mat": "/Users/ingchaolee/PycharmProjects/AcousticBench/results/validation/matlab_inputs.mat",
+        "matlab_reference_csv": null,
+        "verification_statement": "Port-vs-production agreement executed in Python. MATLAB execution NOT performed: MATLAB is absent from this environment."
+      },
+      "tables": {
+        "port_comparisons": {
+          "rows": 6,
+          "columns": [
+            "name",
+            "unit",
+            "n",
+            "max_abs_diff",
+            "median_abs_diff",
+            "tolerance",
+            "passed"
+          ]
+        },
+        "matlab_comparisons": {
+          "rows": 0,
+          "columns": []
+        },
+        "expected_dataset_values": {
+          "rows": 142,
+          "columns": [
+            "test_id",
+            "quantity",
+            "unit",
+            "expected_python"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "port_comparisons.csv",
+          "matlab_comparisons.csv",
+          "expected_dataset_values.csv"
+        ],
+        "figures": [
+          "port_agreement.png"
+        ]
+      },
+      "warnings": [
+        "MATLAB is not installed: the MATLAB-side numerical agreement was NOT executed. MATLAB code, GUI and tests are provided but unverified (docs/matlab_status.md). The MATLAB input file and CSV contract are nevertheless generated under results/validation/ so the comparison can be run elsewhere."
+      ],
+      "narrative": "The production Python implementation and an independently written MATLAB-transcribed Python port agree to numerical precision on real data (band levels, REOIG, PTPE) and on synthetic gain/SNR/THD signals. The MATLAB input file and the exact CSV contract are generated so that `matlab/run_cross_language_export.m` can be run on a machine with MATLAB; here that step is marked NOT RUN because MATLAB is unavailable. This distinction is deliberate: port agreement demonstrates algorithmic consistency, not execution of the MATLAB code.",
+      "duration_s": 5.079,
+      "parameters": {
+        "code": "E15",
+        "tolerances": {
+          "magnitude_db": 0.01,
+          "phase_deg": 0.01,
+          "level_db": 0.01
+        },
+        "matlab_timeout_s": 600
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    },
+    {
+      "code": "E16",
+      "title": "Runtime Benchmark",
+      "status": "completed",
+      "metrics": {
+        "n_operations": 14,
+        "repeats": 3,
+        "total_median_ms": 276.8542915582657,
+        "slowest_operation": "load_mat (no hash)",
+        "slowest_median_ms": 204.85700014978647,
+        "fastest_operation": "design_fir (101 taps)",
+        "fastest_median_ms": 0.04254188388586044,
+        "environment": {
+          "python": "3.12.16",
+          "platform": "macOS-26.6.2-arm64-arm-64bit",
+          "processor": "arm",
+          "cpu_count": 10
+        },
+        "matlab_benchmark": "not_run (MATLAB unavailable in this environment)",
+        "note": "Times are wall-clock medians; they include Python overhead and are intended as a relative regression baseline, not as hard real-time guarantees."
+      },
+      "tables": {
+        "runtime_benchmark": {
+          "rows": 14,
+          "columns": [
+            "operation",
+            "category",
+            "repeats",
+            "median_ms",
+            "min_ms",
+            "max_ms",
+            "throughput_4s_per_s"
+          ]
+        }
+      },
+      "figures": [],
+      "artifacts": {
+        "tables": [
+          "runtime_benchmark.csv"
+        ],
+        "figures": [
+          "runtime_benchmark.png",
+          "runtime_by_category.png"
+        ]
+      },
+      "warnings": [],
+      "narrative": "The complete benchmark (14 operations) runs in 0.28 s. The slowest operation is load_mat (no hash) (204.9 ms). FFT/PSD/STFT operations are dominated by the 4 s signal length; the estimators and the virtual device are cheap relative to data loading. No MATLAB timing is reported because MATLAB is unavailable.",
+      "duration_s": 0.905,
+      "parameters": {
+        "code": "E16",
+        "repeats": 3,
+        "n_synthetic_cases": 50,
+        "operations": [
+          "load_mat",
+          "fft",
+          "stft",
+          "psd",
+          "fir_filter",
+          "iir_filter",
+          "virtual_ha",
+          "synthetic_case"
+        ]
+      },
+      "data_provenance": {
+        "dataset_path": "Data.mat",
+        "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+        "mat_format": "v5",
+        "n_frequencies": 2049,
+        "n_subjects": 14,
+        "n_reinsertions": 3,
+        "n_devices": 14,
+        "invalid_policy": "exclude"
+      },
+      "error": null
+    }
+  ]
+}

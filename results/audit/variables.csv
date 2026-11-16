@@ -1,0 +1,8 @@
+key,description,shape,dtype,complex,unit,n_values,n_nan,nan_fraction,median_level_db,min_level_db,max_level_db
+M_ha2edM,"Hearing-aid driver response at the eardrum, measurement probe tube","(2049, 14, 14, 3)",complex128,True,Pa at 11.2 mV drive,1204812,36882,0.030612244897959183,-53.93829794421542,-146.58405784404877,1.9265180791652683
+M_ha2edR,"Hearing-aid driver response at the eardrum, reference probe tube","(2049, 14, 14, 3)",complex128,True,Pa at 11.2 mV drive,1204812,36882,0.030612244897959183,-53.300653559039645,-179.80885823855027,0.9497545364282474
+M_ha2haf,Hearing-aid driver response at the hearing-aid microphone (feedback path),"(2049, 14, 14, 3)",complex128,True,Pa at 11.2 mV drive,1204812,36882,0.030612244897959183,-71.55153825939189,-144.09523374458908,-24.502420428327962
+M_ls2edM,"Loudspeaker response at the eardrum, measurement probe tube","(2049, 14, 14, 3)",complex128,True,Pa at free-field reference,1204812,36882,0.030612244897959183,-30.002236621623076,-106.95902992822853,-4.1616900635594885
+M_ls2edR,"Loudspeaker response at the eardrum, reference probe tube","(2049, 14, 14, 3)",complex128,True,Pa at free-field reference,1204812,36882,0.030612244897959183,-32.595657208387095,-110.91994057396447,-7.517732315857218
+M_thr_ha,Hearing threshold measured with the hearing-aid driver,"(6, 14, 14, 3)",float64,False,dBV,3528,114,0.03231292517006803,-91.0,-125.0,-23.0
+M_REUR,"Real-ear unaided response (open ear, one insertion per participant)","(2049, 14)",complex128,True,Pa at free-field reference,28686,0,0.0,-25.539707940284398,-61.657615310338336,-5.216353473224377

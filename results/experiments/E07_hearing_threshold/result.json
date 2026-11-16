@@ -1,0 +1,158 @@
+{
+  "code": "E07",
+  "title": "Hearing Threshold",
+  "status": "completed",
+  "metrics": {
+    "n_subjects": 14,
+    "threshold_median_dbv_at_125Hz": {
+      "closed_earmold": -71.0,
+      "nugget_earmold": -69.5,
+      "open_dome": -37.5,
+      "power_dome": -60.0,
+      "silicone_earmold": -66.5,
+      "tulip_dome": -51.0,
+      "vented_earmold": -55.0
+    },
+    "threshold_median_dbv_at_1kHz": {
+      "closed_earmold": -102.0,
+      "nugget_earmold": -102.0,
+      "open_dome": -89.5,
+      "power_dome": -99.0,
+      "silicone_earmold": -103.0,
+      "tulip_dome": -97.0,
+      "vented_earmold": -105.0
+    },
+    "delta_threshold_125Hz_db_by_family": {
+      "closed_earmold": -3.892857142857143,
+      "nugget_earmold": -5.952380952380952,
+      "open_dome": -6.344131569286608e-17,
+      "power_dome": -5.273809523809524,
+      "silicone_earmold": -1.1547619047619049,
+      "tulip_dome": -1.2857142857142854,
+      "vented_earmold": -3.172065784643304e-17
+    },
+    "delta_threshold_125Hz_ci95_by_family": {
+      "closed_earmold": [
+        -6.196090006006888,
+        -1.5896242797073974
+      ],
+      "nugget_earmold": [
+        -12.651126340441,
+        0.746364435679097
+      ],
+      "open_dome": [
+        -2.0424030830667825,
+        2.0424030830667825
+      ],
+      "power_dome": [
+        -8.609810108736655,
+        -1.9378089388823923
+      ],
+      "silicone_earmold": [
+        -4.002539562632325,
+        1.6930157531085157
+      ],
+      "tulip_dome": [
+        -2.9986035523899055,
+        0.42717498096133455
+      ],
+      "vented_earmold": [
+        -2.441763808259974,
+        2.441763808259974
+      ]
+    },
+    "delta_t_vs_delta_hha_correlation": 0.5607577517461055,
+    "delta_t_vs_delta_hha_slope": 0.6127088771990051,
+    "delta_t_vs_delta_hha_mean_difference_db": -1.1311801522458336,
+    "delta_t_vs_delta_hha_n": 56,
+    "note": "\u0394T = T_ref \u2212 T_meas is expressed in dB and equals the equivalent change of Hha at fixed drive voltage; negative values mean the probe reduces driver output."
+  },
+  "tables": {
+    "threshold_curves": {
+      "rows": 84,
+      "columns": [
+        "family",
+        "family_label",
+        "condition",
+        "frequency_hz",
+        "median_dbv",
+        "mean_dbv",
+        "sd_dbv",
+        "n_subjects"
+      ]
+    },
+    "delta_threshold_125Hz": {
+      "rows": 98,
+      "columns": [
+        "family",
+        "family_label",
+        "subject",
+        "reinsertion",
+        "delta_t_db",
+        "valid"
+      ]
+    },
+    "delta_threshold_125Hz_ci": {
+      "rows": 7,
+      "columns": [
+        "family",
+        "family_label",
+        "n",
+        "mean_db",
+        "sd_db",
+        "se_db",
+        "ci_low_db",
+        "ci_high_db"
+      ]
+    },
+    "delta_t_vs_delta_hha": {
+      "rows": 56,
+      "columns": [
+        "family",
+        "family_label",
+        "subject",
+        "delta_t_db",
+        "delta_hha_db"
+      ]
+    }
+  },
+  "figures": [],
+  "artifacts": {
+    "tables": [
+      "threshold_curves.csv",
+      "delta_threshold_125Hz.csv",
+      "delta_threshold_125Hz_ci.csv",
+      "delta_t_vs_delta_hha.csv"
+    ],
+    "figures": [
+      "audiograms.png",
+      "delta_threshold_125.png",
+      "delta_t_vs_delta_hha.png"
+    ]
+  },
+  "warnings": [],
+  "narrative": "Thresholds through the hearing-aid receiver are lowest (most sensitive) for the closed and nugget earmolds and highest for the open dome, matching the coupling tightness. Inserting the measurement probe raises the required voltage at 125 Hz for the occluding couplings, again mirroring the acoustic PTPE. The \u0394T\u2013\u0394Hha comparison confirms that threshold differences express the same level change as the transfer-function measurement, within the limits set by 1 dB threshold quantisation.",
+  "duration_s": 0.079,
+  "parameters": {
+    "code": "E07",
+    "frequencies_hz": [
+      125,
+      250,
+      500,
+      750,
+      1000,
+      2000
+    ]
+  },
+  "data_provenance": {
+    "dataset_path": "Data.mat",
+    "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+    "mat_format": "v5",
+    "n_frequencies": 2049,
+    "n_subjects": 14,
+    "n_reinsertions": 3,
+    "n_devices": 14,
+    "invalid_policy": "exclude"
+  },
+  "error": null
+}

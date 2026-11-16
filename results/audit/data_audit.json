@@ -1,0 +1,1741 @@
+{
+  "generated_at": "2026-11-16T16:12:02+00:00",
+  "dataset": {
+    "file": {
+      "path": "/Users/ingchaolee/PycharmProjects/AcousticBench/Data.mat",
+      "size_bytes": 90283290,
+      "size_mb": 86.1,
+      "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+      "md5": null,
+      "header": "MATLAB 5.0 MAT-file, Platform: PCWIN64, Created on: Wed Apr 22 14:35:03 2026                                        \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001IM",
+      "mat_format": "v5",
+      "load_seconds": 0.233
+    },
+    "n_frequencies": 2049,
+    "frequency_range_hz": [
+      0.0,
+      22050.0
+    ],
+    "frequency_resolution_hz": 10.7666015625,
+    "threshold_frequencies_hz": [
+      125.0,
+      250.0,
+      500.0,
+      750.0,
+      1000.0,
+      2000.0
+    ],
+    "n_devices": 14,
+    "n_subjects": 14,
+    "n_reinsertions": 3,
+    "containers": [
+      "M_ha2edM",
+      "M_ha2edR",
+      "M_ha2haf",
+      "M_ls2edM",
+      "M_ls2edR",
+      "M_thr_ha",
+      "M_REUR"
+    ],
+    "invalid_sessions": [
+      {
+        "container": "M_ha2edM",
+        "n_invalid_sessions": 18,
+        "n_sessions": 588,
+        "invalid_fraction": 0.030612244897959183
+      },
+      {
+        "container": "M_ha2edR",
+        "n_invalid_sessions": 18,
+        "n_sessions": 588,
+        "invalid_fraction": 0.030612244897959183
+      },
+      {
+        "container": "M_ha2haf",
+        "n_invalid_sessions": 18,
+        "n_sessions": 588,
+        "invalid_fraction": 0.030612244897959183
+      },
+      {
+        "container": "M_ls2edM",
+        "n_invalid_sessions": 18,
+        "n_sessions": 588,
+        "invalid_fraction": 0.030612244897959183
+      },
+      {
+        "container": "M_ls2edR",
+        "n_invalid_sessions": 18,
+        "n_sessions": 588,
+        "invalid_fraction": 0.030612244897959183
+      },
+      {
+        "container": "M_thr_ha",
+        "n_invalid_sessions": 19,
+        "n_sessions": 588,
+        "invalid_fraction": 0.03231292517006803
+      },
+      {
+        "container": "M_REUR",
+        "n_invalid_sessions": 0,
+        "n_sessions": 14,
+        "invalid_fraction": 0.0
+      }
+    ],
+    "configuration": {
+      "invalid_policy": "exclude",
+      "free_field_reference": "reference_condition_measurement_probe_median"
+    }
+  },
+  "provenance": {
+    "dataset_doi": "10.5281/zenodo.20023285",
+    "preprint_doi": "10.5281/zenodo.20023116",
+    "authors": "Florian Denk, Lea Hackenberg, Hendrik Husstedt",
+    "licence": "CC BY 4.0",
+    "documentation": "Documentation.pdf (bundled with the dataset)"
+  },
+  "frequency_axis": {
+    "n_bins": 2049,
+    "min_hz": 0.0,
+    "max_hz": 22050.0,
+    "resolution_hz": 10.7666015625,
+    "uniform": true,
+    "fft_bin_count": 4096,
+    "has_dc_bin": true,
+    "dfs_bins": 2049
+  },
+  "threshold_axis": {
+    "frequencies_hz": [
+      125.0,
+      250.0,
+      500.0,
+      750.0,
+      1000.0,
+      2000.0
+    ],
+    "quantisation_db": 1.0,
+    "max_quantisation_residual_db": 0.0,
+    "min_dbv": -125.0,
+    "max_dbv": -23.0
+  },
+  "variables": [
+    {
+      "key": "M_ha2edM",
+      "description": "Hearing-aid driver response at the eardrum, measurement probe tube",
+      "shape": "(2049, 14, 14, 3)",
+      "dtype": "complex128",
+      "complex": true,
+      "unit": "Pa at 11.2 mV drive",
+      "n_values": 1204812,
+      "n_nan": 36882,
+      "nan_fraction": 0.030612244897959183,
+      "median_level_db": -53.93829794421542,
+      "min_level_db": -146.58405784404877,
+      "max_level_db": 1.9265180791652683
+    },
+    {
+      "key": "M_ha2edR",
+      "description": "Hearing-aid driver response at the eardrum, reference probe tube",
+      "shape": "(2049, 14, 14, 3)",
+      "dtype": "complex128",
+      "complex": true,
+      "unit": "Pa at 11.2 mV drive",
+      "n_values": 1204812,
+      "n_nan": 36882,
+      "nan_fraction": 0.030612244897959183,
+      "median_level_db": -53.300653559039645,
+      "min_level_db": -179.80885823855027,
+      "max_level_db": 0.9497545364282474
+    },
+    {
+      "key": "M_ha2haf",
+      "description": "Hearing-aid driver response at the hearing-aid microphone (feedback path)",
+      "shape": "(2049, 14, 14, 3)",
+      "dtype": "complex128",
+      "complex": true,
+      "unit": "Pa at 11.2 mV drive",
+      "n_values": 1204812,
+      "n_nan": 36882,
+      "nan_fraction": 0.030612244897959183,
+      "median_level_db": -71.55153825939189,
+      "min_level_db": -144.09523374458908,
+      "max_level_db": -24.502420428327962
+    },
+    {
+      "key": "M_ls2edM",
+      "description": "Loudspeaker response at the eardrum, measurement probe tube",
+      "shape": "(2049, 14, 14, 3)",
+      "dtype": "complex128",
+      "complex": true,
+      "unit": "Pa at free-field reference",
+      "n_values": 1204812,
+      "n_nan": 36882,
+      "nan_fraction": 0.030612244897959183,
+      "median_level_db": -30.002236621623076,
+      "min_level_db": -106.95902992822853,
+      "max_level_db": -4.1616900635594885
+    },
+    {
+      "key": "M_ls2edR",
+      "description": "Loudspeaker response at the eardrum, reference probe tube",
+      "shape": "(2049, 14, 14, 3)",
+      "dtype": "complex128",
+      "complex": true,
+      "unit": "Pa at free-field reference",
+      "n_values": 1204812,
+      "n_nan": 36882,
+      "nan_fraction": 0.030612244897959183,
+      "median_level_db": -32.595657208387095,
+      "min_level_db": -110.91994057396447,
+      "max_level_db": -7.517732315857218
+    },
+    {
+      "key": "M_thr_ha",
+      "description": "Hearing threshold measured with the hearing-aid driver",
+      "shape": "(6, 14, 14, 3)",
+      "dtype": "float64",
+      "complex": false,
+      "unit": "dBV",
+      "n_values": 3528,
+      "n_nan": 114,
+      "nan_fraction": 0.03231292517006803,
+      "median_level_db": -91.0,
+      "min_level_db": -125.0,
+      "max_level_db": -23.0
+    },
+    {
+      "key": "M_REUR",
+      "description": "Real-ear unaided response (open ear, one insertion per participant)",
+      "shape": "(2049, 14)",
+      "dtype": "complex128",
+      "complex": true,
+      "unit": "Pa at free-field reference",
+      "n_values": 28686,
+      "n_nan": 0,
+      "nan_fraction": 0.0,
+      "median_level_db": -25.539707940284398,
+      "min_level_db": -61.657615310338336,
+      "max_level_db": -5.216353473224377
+    }
+  ],
+  "session_validity": [
+    {
+      "container": "M_ha2edM",
+      "n_invalid_sessions": 18,
+      "n_sessions": 588,
+      "invalid_fraction": 0.030612244897959183
+    },
+    {
+      "container": "M_ha2edR",
+      "n_invalid_sessions": 18,
+      "n_sessions": 588,
+      "invalid_fraction": 0.030612244897959183
+    },
+    {
+      "container": "M_ha2haf",
+      "n_invalid_sessions": 18,
+      "n_sessions": 588,
+      "invalid_fraction": 0.030612244897959183
+    },
+    {
+      "container": "M_ls2edM",
+      "n_invalid_sessions": 18,
+      "n_sessions": 588,
+      "invalid_fraction": 0.030612244897959183
+    },
+    {
+      "container": "M_ls2edR",
+      "n_invalid_sessions": 18,
+      "n_sessions": 588,
+      "invalid_fraction": 0.030612244897959183
+    },
+    {
+      "container": "M_thr_ha",
+      "n_invalid_sessions": 19,
+      "n_sessions": 588,
+      "invalid_fraction": 0.03231292517006803
+    },
+    {
+      "container": "M_REUR",
+      "n_invalid_sessions": 0,
+      "n_sessions": 14,
+      "invalid_fraction": 0.0
+    }
+  ],
+  "invalid_sessions": [
+    {
+      "container": "M_ha2edM",
+      "device_code": 2,
+      "device": "Closed Earmold \u00b7 Measurement",
+      "family": "closed_earmold",
+      "condition": "measurement",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 2,
+      "device": "Closed Earmold \u00b7 Measurement",
+      "family": "closed_earmold",
+      "condition": "measurement",
+      "subject": 7,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 12,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 14,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 4,
+      "device": "Vented Earmold \u00b7 Measurement",
+      "family": "vented_earmold",
+      "condition": "measurement",
+      "subject": 12,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 1,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 1,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 6,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 1,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 2,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 3,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 6,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 11,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 7,
+      "device": "Silicone Earmold \u00b7 Reference",
+      "family": "silicone_earmold",
+      "condition": "reference",
+      "subject": 2,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 7,
+      "device": "Silicone Earmold \u00b7 Reference",
+      "family": "silicone_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ha2edM",
+      "device_code": 8,
+      "device": "Silicone Earmold \u00b7 Measurement",
+      "family": "silicone_earmold",
+      "condition": "measurement",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 2,
+      "device": "Closed Earmold \u00b7 Measurement",
+      "family": "closed_earmold",
+      "condition": "measurement",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 2,
+      "device": "Closed Earmold \u00b7 Measurement",
+      "family": "closed_earmold",
+      "condition": "measurement",
+      "subject": 7,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 12,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 14,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 4,
+      "device": "Vented Earmold \u00b7 Measurement",
+      "family": "vented_earmold",
+      "condition": "measurement",
+      "subject": 12,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 1,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 1,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 6,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 1,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 2,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 3,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 6,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 11,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 7,
+      "device": "Silicone Earmold \u00b7 Reference",
+      "family": "silicone_earmold",
+      "condition": "reference",
+      "subject": 2,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 7,
+      "device": "Silicone Earmold \u00b7 Reference",
+      "family": "silicone_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2edR",
+      "device_code": 8,
+      "device": "Silicone Earmold \u00b7 Measurement",
+      "family": "silicone_earmold",
+      "condition": "measurement",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 2,
+      "device": "Closed Earmold \u00b7 Measurement",
+      "family": "closed_earmold",
+      "condition": "measurement",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 2,
+      "device": "Closed Earmold \u00b7 Measurement",
+      "family": "closed_earmold",
+      "condition": "measurement",
+      "subject": 7,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 12,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 14,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 4,
+      "device": "Vented Earmold \u00b7 Measurement",
+      "family": "vented_earmold",
+      "condition": "measurement",
+      "subject": 12,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 1,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 1,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 6,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 1,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 2,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 3,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 6,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 11,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 7,
+      "device": "Silicone Earmold \u00b7 Reference",
+      "family": "silicone_earmold",
+      "condition": "reference",
+      "subject": 2,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 7,
+      "device": "Silicone Earmold \u00b7 Reference",
+      "family": "silicone_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ha2haf",
+      "device_code": 8,
+      "device": "Silicone Earmold \u00b7 Measurement",
+      "family": "silicone_earmold",
+      "condition": "measurement",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 2,
+      "device": "Closed Earmold \u00b7 Measurement",
+      "family": "closed_earmold",
+      "condition": "measurement",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 2,
+      "device": "Closed Earmold \u00b7 Measurement",
+      "family": "closed_earmold",
+      "condition": "measurement",
+      "subject": 7,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 12,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 14,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 4,
+      "device": "Vented Earmold \u00b7 Measurement",
+      "family": "vented_earmold",
+      "condition": "measurement",
+      "subject": 12,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 1,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 1,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 6,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 1,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 2,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 3,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 6,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 11,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 7,
+      "device": "Silicone Earmold \u00b7 Reference",
+      "family": "silicone_earmold",
+      "condition": "reference",
+      "subject": 2,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 7,
+      "device": "Silicone Earmold \u00b7 Reference",
+      "family": "silicone_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": false
+    },
+    {
+      "container": "M_ls2edM",
+      "device_code": 8,
+      "device": "Silicone Earmold \u00b7 Measurement",
+      "family": "silicone_earmold",
+      "condition": "measurement",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 2,
+      "device": "Closed Earmold \u00b7 Measurement",
+      "family": "closed_earmold",
+      "condition": "measurement",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 2,
+      "device": "Closed Earmold \u00b7 Measurement",
+      "family": "closed_earmold",
+      "condition": "measurement",
+      "subject": 7,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 12,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 14,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 4,
+      "device": "Vented Earmold \u00b7 Measurement",
+      "family": "vented_earmold",
+      "condition": "measurement",
+      "subject": 12,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 1,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 1,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 6,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 1,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 2,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 3,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 6,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 11,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 7,
+      "device": "Silicone Earmold \u00b7 Reference",
+      "family": "silicone_earmold",
+      "condition": "reference",
+      "subject": 2,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 7,
+      "device": "Silicone Earmold \u00b7 Reference",
+      "family": "silicone_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_ls2edR",
+      "device_code": 8,
+      "device": "Silicone Earmold \u00b7 Measurement",
+      "family": "silicone_earmold",
+      "condition": "measurement",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 2,
+      "device": "Closed Earmold \u00b7 Measurement",
+      "family": "closed_earmold",
+      "condition": "measurement",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 2,
+      "device": "Closed Earmold \u00b7 Measurement",
+      "family": "closed_earmold",
+      "condition": "measurement",
+      "subject": 7,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 12,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 3,
+      "device": "Vented Earmold \u00b7 Reference",
+      "family": "vented_earmold",
+      "condition": "reference",
+      "subject": 14,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 4,
+      "device": "Vented Earmold \u00b7 Measurement",
+      "family": "vented_earmold",
+      "condition": "measurement",
+      "subject": 12,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 1,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 1,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 5,
+      "device": "Nugget Earmold \u00b7 Reference",
+      "family": "nugget_earmold",
+      "condition": "reference",
+      "subject": 6,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 1,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 2,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 3,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 6,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 6,
+      "device": "Nugget Earmold \u00b7 Measurement",
+      "family": "nugget_earmold",
+      "condition": "measurement",
+      "subject": 11,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 7,
+      "device": "Silicone Earmold \u00b7 Reference",
+      "family": "silicone_earmold",
+      "condition": "reference",
+      "subject": 2,
+      "reinsertion": 3,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 7,
+      "device": "Silicone Earmold \u00b7 Reference",
+      "family": "silicone_earmold",
+      "condition": "reference",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 8,
+      "device": "Silicone Earmold \u00b7 Measurement",
+      "family": "silicone_earmold",
+      "condition": "measurement",
+      "subject": 5,
+      "reinsertion": 1,
+      "measured_nan": true,
+      "structurally_valid": true
+    },
+    {
+      "container": "M_thr_ha",
+      "device_code": 14,
+      "device": "Power Dome \u00b7 Measurement",
+      "family": "power_dome",
+      "condition": "measurement",
+      "subject": 3,
+      "reinsertion": 2,
+      "measured_nan": true,
+      "structurally_valid": true
+    }
+  ],
+  "structural_validity": [
+    {
+      "container": "M_ha2edM",
+      "description": "Hearing-aid driver response at the eardrum, measurement probe tube",
+      "valid_conditions": "measurement",
+      "valid_couplings": "all",
+      "n_structurally_valid_devices": 7,
+      "valid_device_codes": "2, 4, 6, 8, 10, 12, 14",
+      "rationale": "In the reference condition the measurement probe tube microphone was hanging loosely around the ear (Documentation.pdf); its signal is not an eardrum pressure, although it is stored as a number."
+    },
+    {
+      "container": "M_ha2edR",
+      "description": "Hearing-aid driver response at the eardrum, reference probe tube",
+      "valid_conditions": "all",
+      "valid_couplings": "earmold",
+      "n_structurally_valid_devices": 8,
+      "valid_device_codes": "1, 2, 3, 4, 5, 6, 7, 8",
+      "rationale": "The reference probe tube was inserted through a dedicated bore in the earmold and used only for earmold measurements; for domes no reference-probe eardrum pressure exists."
+    },
+    {
+      "container": "M_ha2haf",
+      "description": "Hearing-aid driver response at the hearing-aid microphone (feedback path)",
+      "valid_conditions": "all",
+      "valid_couplings": "all",
+      "n_structurally_valid_devices": 14,
+      "valid_device_codes": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14",
+      "rationale": "The hearing-aid microphone is part of the device and always present."
+    },
+    {
+      "container": "M_ls2edM",
+      "description": "Loudspeaker response at the eardrum, measurement probe tube",
+      "valid_conditions": "measurement",
+      "valid_couplings": "all",
+      "n_structurally_valid_devices": 7,
+      "valid_device_codes": "2, 4, 6, 8, 10, 12, 14",
+      "rationale": "In the reference condition the measurement probe tube was hanging loosely around the ear; the stored loudspeaker response then measures the free field, not the eardrum."
+    },
+    {
+      "container": "M_ls2edR",
+      "description": "Loudspeaker response at the eardrum, reference probe tube",
+      "valid_conditions": "all",
+      "valid_couplings": "earmold",
+      "n_structurally_valid_devices": 8,
+      "valid_device_codes": "1, 2, 3, 4, 5, 6, 7, 8",
+      "rationale": "The reference probe tube was available for earmolds only; dome conditions store the loosely hanging reference microphone instead."
+    },
+    {
+      "container": "M_thr_ha",
+      "description": "Hearing threshold measured with the hearing-aid driver",
+      "valid_conditions": "all",
+      "valid_couplings": "all",
+      "n_structurally_valid_devices": 14,
+      "valid_device_codes": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14",
+      "rationale": "Thresholds are behavioural and exist for all earpieces/conditions."
+    },
+    {
+      "container": "M_REUR",
+      "description": "Real-ear unaided response (open ear, one insertion per participant)",
+      "valid_conditions": "all",
+      "valid_couplings": "all",
+      "n_structurally_valid_devices": 1,
+      "valid_device_codes": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14",
+      "rationale": "Measured in the open ear with the measurement probe in place and one insertion per participant; used as the unaided (open-ear) reference of the real-ear occluded insertion gain."
+    }
+  ],
+  "checks": [
+    {
+      "status": "PASS",
+      "severity": "info",
+      "code": "nan_session_consistency",
+      "message": "All five transfer-function containers share the identical NaN session mask (18 invalid sessions); measurement sessions were invalidated as a whole.",
+      "expected": "identical masks",
+      "observed": "identical"
+    },
+    {
+      "status": "PASS",
+      "severity": "warning",
+      "code": "threshold_invalid_sessions",
+      "message": "The threshold container has 19 invalid sessions (transfer functions: 18); 1 extremely invalid threshold session(s) exist beyond the transfer-function mask and are excluded independently.",
+      "expected": ">= 18",
+      "observed": "19"
+    },
+    {
+      "status": "INFO",
+      "severity": "info",
+      "code": "partial_nan_sessions",
+      "message": "No partial NaN sessions: invalid data are whole search-block columns.",
+      "expected": null,
+      "observed": null
+    },
+    {
+      "status": "PASS",
+      "severity": "info",
+      "code": "frequency_axis",
+      "message": "Frequency axis is a uniform DFT grid: 2049 bins from 0 to 22050 Hz, \u0394f = 10.766602 Hz (4096-point DFT at 44.1 kHz). The DC bin and the < 50 Hz bins (outside the sweep range) are excluded from level statistics.",
+      "expected": null,
+      "observed": null
+    },
+    {
+      "status": "PASS",
+      "severity": "info",
+      "code": "threshold_axis",
+      "message": "Audiometric thresholds are given in dBV at 125, 250, 500, 750, 1000 and 2000 Hz; values are quantised to 1 dB (max residual 0.00e+00 dB).",
+      "expected": "1 dB quantisation",
+      "observed": "max residual 0.00e+00 dB"
+    },
+    {
+      "status": "PASS",
+      "severity": "info",
+      "code": "structural_mpt_loose_in_reference",
+      "message": "The measurement probe microphone in the REFERENCE condition is 45\u201365 dB below its in-ear level, confirming that it hung loosely around the ear. M_*edM reference-condition values are therefore structurally invalid for eardrum-pressure analysis and are masked, not imputed.",
+      "expected": "level gap > 20 dB",
+      "observed": "minimum gap 44.9 dB"
+    },
+    {
+      "status": "PASS",
+      "severity": "info",
+      "code": "structural_rpt_missing_for_domes",
+      "message": "For dome conditions the reference probe tube was not used (documented); its hearing-aid-driver level is 59.2 dB below the earmold level. M_*edR dome values are structurally invalid for eardrum pressure.",
+      "expected": "level gap > 20 dB",
+      "observed": "earmold \u2212 dome = 59.2 dB"
+    },
+    {
+      "status": "PASS",
+      "severity": "info",
+      "code": "structural_free_field_signature",
+      "message": "Loudspeaker-driven signals of loosely hanging probes are device-independent (across-device SD 0.52 dB at 1 kHz, 0.34 dB for dome RPT), confirming the free-field interpretation and enabling an in-situ free-field reference.",
+      "expected": "SD < 2 dB",
+      "observed": "0.52 dB"
+    },
+    {
+      "status": "PASS",
+      "severity": "info",
+      "code": "units_hha_db_spl",
+      "message": "Hearing-aid driver pressures interpreted as Pa at 11.2 mV yield 82.8 dB SPL (median, 0.5\u20134 kHz), consistent with the documentation and Figure 4 of the preprint.",
+      "expected": "40\u2013110 dB SPL",
+      "observed": "82.8 dB SPL"
+    },
+    {
+      "status": "PASS",
+      "severity": "info",
+      "code": "units_cross_probe_agreement",
+      "message": "When both probe tubes are in the ear (measurement condition) the two probe microphones agree to a median |bias| of 1.69 dB; the reference probe reads systematically ~1.5 dB higher, which is reported as a probe-placement bias rather than hidden.",
+      "expected": "median |bias| < 3 dB",
+      "observed": "1.69 dB"
+    },
+    {
+      "status": "PASS",
+      "severity": "info",
+      "code": "units_reoig_sign",
+      "message": "Ratio-based REOIG at 1 kHz is strongly negative for the closed earmold (-10.9 dB) and near zero for the open dome (0.5 dB), as expected from the coupling tightness.",
+      "expected": "closed \u2264 \u22125 dB, |open| \u2264 6 dB",
+      "observed": "closed -10.9 dB, open 0.5 dB"
+    },
+    {
+      "status": "PASS",
+      "severity": "info",
+      "code": "units_reug_shape",
+      "message": "The real-ear unaided gain obtained with the in-situ free-field reference is +0.6 dB at 1 kHz, +14.0 dB at 2 kHz and +15.7 dB at 4 kHz, i.e. the expected ear-canal resonance shape. This validates the free-field normalisation used for loudspeaker-driven levels.",
+      "expected": "\u22480 dB at 1 kHz, positive 2\u20134 kHz",
+      "observed": "1000: +0.6 dB, 2000: +14.0 dB, 4000: +15.7 dB"
+    },
+    {
+      "status": "PASS",
+      "severity": "info",
+      "code": "expected_ptpe_direction",
+      "message": "Probe insertion reduces low-frequency hearing-aid-driver output (\u0394Hha at 100 Hz = -4.4 dB), increases sound leakage into the ear (\u0394REOIG at 2 kHz = +1.4 dB) and increases the driver voltage at threshold (\u0394T at 125 Hz = -2.0 dB). These reproducible directions validate the reference/measurement semantics.",
+      "expected": "\u0394Hha < 0, \u0394REOIG > 0, \u0394T < 0",
+      "observed": "-4.4, +1.4, -2.0 dB"
+    },
+    {
+      "status": "INFO",
+      "severity": "info",
+      "code": "reinsertion_repeatability",
+      "message": "Within-subject reinsertion SD of |Hha| (0.5\u20134 kHz, measurement condition) has a median of 0.38 dB and a 95th percentile of 1.47 dB. This is the noise floor against which probe-presence effects must be judged.",
+      "expected": null,
+      "observed": "median 0.38 dB, p95 1.47 dB"
+    },
+    {
+      "status": "INFO",
+      "severity": "warning",
+      "code": "absolute_free_field_scaling",
+      "message": "The stored loudspeaker-driven levels are not normalised to 1 Pa free field: the in-situ free-field reference is \u2248 \u221227 dB at 1 kHz. Absolute REUG/REOG figures in this toolkit therefore use the in-situ reference; REOIG ratios are scale-invariant and unaffected. See docs/data.md.",
+      "expected": null,
+      "observed": null
+    },
+    {
+      "status": "INFO",
+      "severity": "info",
+      "code": "reference_condition_not_available_for_domes",
+      "message": "For dome conditions no reference probe tube exists, so reference-condition Hha/REOIG are not available; the probe-tube presence effect for domes is evaluated via the threshold differences only.",
+      "expected": null,
+      "observed": null
+    },
+    {
+      "status": "INFO",
+      "severity": "info",
+      "code": "invalid_values_never_imputed",
+      "message": "NaN sessions and structurally invalid entries are excluded, never imputed. All analyses report the number of contributing subjects.",
+      "expected": null,
+      "observed": null
+    }
+  ],
+  "derived": {
+    "structural_signatures": {
+      "measurement_probe_reference_condition_level_gap_db": {
+        "closed_earmold": 62.37,
+        "vented_earmold": 62.43,
+        "nugget_earmold": 60.86,
+        "silicone_earmold": 60.92,
+        "open_dome": 44.92,
+        "tulip_dome": 57.1,
+        "power_dome": 60.25
+      },
+      "reference_probe_dome_level_gap_db": 59.21,
+      "free_field_across_device_sd_db": {
+        "M_ls2edM_reference_at_1kHz": 0.522,
+        "M_ls2edM_reference_at_4kHz": 0.537,
+        "M_ls2edR_domes_at_1kHz": 0.344
+      }
+    },
+    "unit_interpretation": {
+      "hha_median_db_spl_500_4000Hz": 82.84,
+      "threshold_range_dbv": [
+        -125.0,
+        -23.0
+      ],
+      "cross_probe_bias_db": {
+        "100": -1.6879677059620022,
+        "250": -1.6868304169398058,
+        "500": -1.713144660512981,
+        "1000": -1.3698198229699763,
+        "2000": -1.571666798496679,
+        "4000": -1.4568284545989023,
+        "8000": -3.1386494411363373
+      },
+      "reoig_1kHz_db": {
+        "closed_earmold": -10.92,
+        "vented_earmold": -0.74,
+        "nugget_earmold": -5.14,
+        "silicone_earmold": -6.52,
+        "open_dome": 0.47,
+        "tulip_dome": 1.02,
+        "power_dome": -0.43
+      },
+      "reug_db": {
+        "1000": 0.64,
+        "2000": 13.97,
+        "4000": 15.74
+      }
+    },
+    "probe_tube_presence_effect": {
+      "delta_hha_100Hz_db_by_family": {
+        "closed_earmold": -4.05,
+        "vented_earmold": -0.22,
+        "nugget_earmold": -9.27,
+        "silicone_earmold": -4.67
+      },
+      "delta_hha_100Hz_median_db": -4.36,
+      "delta_hha_1kHz_median_db": -0.19690184092678997,
+      "delta_reoig_2kHz_median_db": 1.45,
+      "delta_threshold_125Hz_median_db": -2.0,
+      "note": "\u0394T = T_ref \u2212 T_meas equals the equivalent change of Hha at the eardrum, so threshold data extend the PTPE to domes where no reference probe exists."
+    },
+    "repeatability": {
+      "within_subject_reinsertion_sd_db_median_500_4000": 0.38,
+      "p95_db": 1.47,
+      "note": "SD across the three reinsertions with probe tubes left in place."
+    }
+  },
+  "summary": {
+    "n_checks": 17,
+    "n_passed": 12,
+    "n_warnings": 0,
+    "n_errors": 0
+  }
+}

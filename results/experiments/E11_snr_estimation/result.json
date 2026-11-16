@@ -1,0 +1,144 @@
+{
+  "code": "E11",
+  "title": "SNR Estimation",
+  "status": "completed",
+  "metrics": {
+    "n_cases": 250,
+    "n_reference_cases": 100,
+    "target_db": 0.5,
+    "reference_condition": "1 kHz tone in additive white Gaussian noise, SNR 10\u202640 dB, 4 s Hann-windowed PSD estimate",
+    "reference_residual_summary": {
+      "n": 100,
+      "median_abs_error": 0.000768734712121244,
+      "mean_abs_error": 0.0018359032393124686,
+      "p95_abs_error": 0.00728565504330154,
+      "max_abs_error": 0.01050551967358615,
+      "fraction_within_target": 1.0,
+      "target": 0.5,
+      "unit": "dB",
+      "target_met": true
+    },
+    "reference_psd_summary": {
+      "n": 100,
+      "median_abs_error": 0.033407869885142105,
+      "mean_abs_error": 0.03240925935064487,
+      "p95_abs_error": 0.04454679018845197,
+      "max_abs_error": 0.055271965704069004,
+      "fraction_within_target": 1.0,
+      "target": 0.5,
+      "unit": "dB",
+      "target_met": true
+    },
+    "full_range_residual_summary": {
+      "n": 250,
+      "median_abs_error": 0.0012279156453125495,
+      "mean_abs_error": 0.004234720592107701,
+      "p95_abs_error": 0.021309132751523352,
+      "max_abs_error": 0.07030177462969744,
+      "fraction_within_target": 1.0,
+      "target": 0.5,
+      "unit": "dB",
+      "target_met": true
+    },
+    "by_noise_color": {
+      "pink": {
+        "residual": {
+          "n": 77,
+          "median_abs_error": 0.002301656131084684,
+          "mean_abs_error": 0.007718266999502595,
+          "p95_abs_error": 0.033650267266478205,
+          "max_abs_error": 0.07030177462969744,
+          "fraction_within_target": 1.0,
+          "target": 0.5,
+          "unit": "dB",
+          "target_met": true
+        },
+        "psd": {
+          "n": 77,
+          "median_abs_error": 0.13628240709373074,
+          "mean_abs_error": 0.14130041764475604,
+          "p95_abs_error": 0.30019709922868043,
+          "max_abs_error": 0.3777921015598913,
+          "fraction_within_target": 1.0,
+          "target": 0.5,
+          "unit": "dB",
+          "target_met": true
+        }
+      },
+      "white": {
+        "residual": {
+          "n": 173,
+          "median_abs_error": 0.0008511047408568118,
+          "mean_abs_error": 0.0026842403992209576,
+          "p95_abs_error": 0.010336350839769184,
+          "max_abs_error": 0.04219767088394777,
+          "fraction_within_target": 1.0,
+          "target": 0.5,
+          "unit": "dB",
+          "target_met": true
+        },
+        "psd": {
+          "n": 173,
+          "median_abs_error": 0.03367925333851929,
+          "mean_abs_error": 0.03315984120366328,
+          "p95_abs_error": 0.0453263474031295,
+          "max_abs_error": 0.06367658852724745,
+          "fraction_within_target": 1.0,
+          "target": 0.5,
+          "unit": "dB",
+          "target_met": true
+        }
+      }
+    },
+    "target_met_in_reference_condition": true,
+    "psd_target_met_in_reference_condition": true,
+    "note": "The residual estimator is primary; the PSD estimator is reported to expose the expected bias for non-flat (pink) noise."
+  },
+  "tables": {
+    "snr_case_results": {
+      "rows": 250,
+      "columns": [
+        "case_id",
+        "tone_hz",
+        "noise_color",
+        "input_level_dbfs",
+        "snr_db_true",
+        "snr_db_estimated_residual",
+        "error_residual_db",
+        "snr_db_estimated_psd",
+        "error_psd_db",
+        "is_reference_condition"
+      ]
+    }
+  },
+  "figures": [],
+  "artifacts": {
+    "tables": [
+      "snr_case_results.csv"
+    ],
+    "figures": [
+      "snr_scatter.png",
+      "snr_psd_by_color.png",
+      "snr_error_histogram.png"
+    ]
+  },
+  "warnings": [],
+  "narrative": "Using the exact noise waveform as ground truth, the residual estimator recovers the SNR to within 0.0105 dB in the reference condition (target 0.5 dB), whereas the PSD estimator is accurate for white noise but biased for pink noise. Reporting both makes the estimator's validity domain explicit rather than hiding it.",
+  "duration_s": 3.452,
+  "parameters": {
+    "code": "E11",
+    "n_cases": 250,
+    "metric": "snr"
+  },
+  "data_provenance": {
+    "dataset_path": "Data.mat",
+    "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+    "mat_format": "v5",
+    "n_frequencies": 2049,
+    "n_subjects": 14,
+    "n_reinsertions": 3,
+    "n_devices": 14,
+    "invalid_policy": "exclude"
+  },
+  "error": null
+}

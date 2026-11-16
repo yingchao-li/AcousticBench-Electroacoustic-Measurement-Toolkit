@@ -1,0 +1,155 @@
+{
+  "code": "E06",
+  "title": "Real-Ear Response",
+  "status": "completed",
+  "metrics": {
+    "n_subjects": 14,
+    "reug_median_db_at_1kHz": 0.6427422613706462,
+    "reug_median_db_at_2kHz": 13.967958079602573,
+    "reug_median_db_at_4kHz": 15.738972032823444,
+    "reoig_median_db_at_1kHz": {
+      "closed_earmold": -10.695148978221507,
+      "nugget_earmold": -5.027116387382726,
+      "open_dome": 0.12429518266911188,
+      "power_dome": -1.2231671080087398,
+      "silicone_earmold": -5.23488304882984,
+      "tulip_dome": 0.11787631409925581,
+      "vented_earmold": -2.264064665193711
+    },
+    "reoig_median_db_at_4kHz": {
+      "closed_earmold": -22.88970264232998,
+      "nugget_earmold": -18.068319504760357,
+      "open_dome": -2.494785766574947,
+      "power_dome": -15.850569113623301,
+      "silicone_earmold": -18.23285199905931,
+      "tulip_dome": -8.846588271046503,
+      "vented_earmold": -20.472877617164414
+    },
+    "note": "REOIG is a pressure ratio and scale-invariant. REUG/REOG use the in-situ free-field reference; see docs/data.md for the documented scaling caveat."
+  },
+  "tables": {
+    "reug_percentiles": {
+      "rows": 1853,
+      "columns": [
+        "frequency_hz",
+        "device_code",
+        "device",
+        "family",
+        "family_label",
+        "condition",
+        "n_valid",
+        "q10",
+        "q25",
+        "median_db",
+        "q75",
+        "q90"
+      ]
+    },
+    "reoig_percentiles": {
+      "rows": 12971,
+      "columns": [
+        "frequency_hz",
+        "device_code",
+        "device",
+        "family",
+        "family_label",
+        "condition",
+        "n_valid",
+        "q10",
+        "q25",
+        "median_db",
+        "q75",
+        "q90"
+      ]
+    },
+    "reog_percentiles": {
+      "rows": 12971,
+      "columns": [
+        "frequency_hz",
+        "device_code",
+        "device",
+        "family",
+        "family_label",
+        "condition",
+        "n_valid",
+        "q10",
+        "q25",
+        "median_db",
+        "q75",
+        "q90"
+      ]
+    },
+    "reug_band_levels": {
+      "rows": 9,
+      "columns": [
+        "family",
+        "family_label",
+        "band",
+        "band_center_hz",
+        "median_db",
+        "mean_db",
+        "sd_db",
+        "n",
+        "index_x",
+        "q25_db",
+        "index_y",
+        "q75_db"
+      ]
+    },
+    "reoig_band_levels": {
+      "rows": 63,
+      "columns": [
+        "family",
+        "family_label",
+        "band",
+        "band_center_hz",
+        "median_db",
+        "mean_db",
+        "sd_db",
+        "n",
+        "index_x",
+        "q25_db",
+        "index_y",
+        "q75_db"
+      ]
+    }
+  },
+  "figures": [],
+  "artifacts": {
+    "tables": [
+      "reug_percentiles.csv",
+      "reoig_percentiles.csv.gz",
+      "reog_percentiles.csv.gz",
+      "reug_band_levels.csv",
+      "reoig_band_levels.csv"
+    ],
+    "figures": [
+      "reug_curves.png",
+      "reoig_curves.png",
+      "reoig_band_levels.png",
+      "reog_curves.png",
+      "reoig_heatmap.png"
+    ]
+  },
+  "warnings": [],
+  "narrative": "The open ear shows the characteristic ear-canal resonance of roughly +14 dB near 2 kHz relative to 1 kHz. Occluding the ear with a tightly sealed earmold strongly attenuates external sound below 2 kHz (negative REOIG), whereas open and tulip domes provide almost no attenuation. REOIG therefore quantifies coupling tightness and is the acoustic quantity most directly related to the probe-tube presence effect.",
+  "duration_s": 0.595,
+  "parameters": {
+    "code": "E06",
+    "band_hz": [
+      1000,
+      4000
+    ]
+  },
+  "data_provenance": {
+    "dataset_path": "Data.mat",
+    "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+    "mat_format": "v5",
+    "n_frequencies": 2049,
+    "n_subjects": 14,
+    "n_reinsertions": 3,
+    "n_devices": 14,
+    "invalid_policy": "exclude"
+  },
+  "error": null
+}

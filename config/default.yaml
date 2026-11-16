@@ -1,0 +1,198 @@
+# =============================================================================
+# AcousticBench default configuration
+# All paths are resolved relative to the repository root (override with the
+# ACOUSTICBENCH_ROOT environment variable).  Any value can be overridden with
+# a user YAML file passed via --config / ACOUSTICBENCH_CONFIG.
+# =============================================================================
+
+project:
+  name: AcousticBench
+  version: "0.1.0"
+  description: "Electroacoustic Measurement, Validation & Reporting Toolkit"
+  # Master random seed used everywhere (bootstrap, synthetic cases, faults).
+  seed: 20260422
+
+paths:
+  data_mat: "Data.mat"
+  documentation_pdf: "Documentation.pdf"
+  results_dir: "results"
+  reports_dir: "reports"
+  cache_dir: ".cache"
+
+logging:
+  level: "INFO"
+  file: "results/logs/acousticbench.log"
+
+# -----------------------------------------------------------------------------
+# Dataset interpretation
+# -----------------------------------------------------------------------------
+data:
+  n_subjects: 14
+  n_reinsertions: 3
+  n_devices: 14
+  n_frequencies: 2049
+  n_threshold_frequencies: 6
+  # NaN sessions and structurally invalid entries are always excluded and are
+  # NEVER imputed.  This key documents the policy for reports.
+  invalid_policy: "exclude"
+  # The exponential sweep covered 50 Hz … Nyquist; bins below 50 Hz carry no
+  # excitation and are excluded from level averages.
+  min_analysis_frequency_hz: 50.0
+  # v_frq is the non-negative half of a 4096-point DFT at 44.1 kHz.
+  fft_bin_count: 4096
+  # In the reference condition the measurement probe tube hangs loosely around
+  # the ear; the loudspeaker-driven response is therefore used as an in-situ
+  # free-field estimate (median across reference-condition earpieces).
+  free_field_reference:
+    method: "reference_condition_measurement_probe_median"
+    min_devices: 5
+  # Audiometric thresholds were obtained with a 1 dB step size.
+  threshold_quantisation_db: 1.0
+
+# -----------------------------------------------------------------------------
+# Statistical analysis defaults
+# -----------------------------------------------------------------------------
+analysis:
+  alpha: 0.05
+  correction: "holm"            # holm | bh | none
+  # Subject is the independent statistical unit: reinsertions are averaged
+  # within subject before any inferential test.
+  unit_of_analysis: "subject"
+  bootstrap:
+    n_resamples: 10000
+    confidence: 0.95
+    seed: 20260422
+    method: "percentile"        # percentile | bca
+  bands:
+    method: "octave"            # octave | third_octave | custom
+    custom_edges_hz: [20, 100, 250, 500, 1000, 2000, 4000, 8000, 16000, 22050]
+  smoothing:
+    method: "none"              # none | fractional_octave
+    fraction: 3
+  level_floor_db: -120.0
+  summary_bands_hz: [100, 250, 500, 1000, 2000, 4000, 8000]
+  primary_band_hz: [500, 4000]
+  minimum_subjects: 3
+
+# -----------------------------------------------------------------------------
+# Synthetic signal-processing validation
+# -----------------------------------------------------------------------------
+synthetic:
+  n_cases: 1000
+  seed: 20260422
+  fs_hz: 48000
+  duration_s: 4.0
+  # Ranges for the randomised factorial design.
+  snr_db_range: [0.0, 40.0]
+  thd_percent_range: [0.1, 10.0]
+  gain_db_range: [-20.0, 40.0]
+  input_level_dbfs: [-30.0, -10.0]
+  filter_types: ["lowpass", "highpass", "bandpass", "peaking"]
+  noise_colors: ["white", "pink"]
+  # Preset acceptance targets.  These are only evaluated under the explicitly
+  # documented reference conditions below; failing cases are reported, never
+  # hidden.
+  targets:
+    gain_error_db: 0.1
+    snr_error_db: 0.5
+    thd_error_percentage_points: 0.1
+    frequency_response_mae_db: 0.5
+  reference_conditions:
+    gain: "1 kHz tone, no compression, no noise, 4 s, -20 dBFS; estimate from the DFT bin of the tone"
+    snr: "1 kHz tone in additive white Gaussian noise, SNR 10…40 dB, 4 s Hann-windowed PSD estimate"
+    thd: "1 kHz tone, THD 0.5…5 %, no noise, integer number of periods, Hann-windowed harmonic analysis"
+    frequency_response: "logarithmic sweep 100 Hz…10 kHz, 4 s, no noise, no compression; deconvolution vs. known filter response"
+
+# -----------------------------------------------------------------------------
+# Experiments E01-E16
+# -----------------------------------------------------------------------------
+experiments:
+  enabled: ["E01", "E02", "E03", "E04", "E05", "E06", "E07", "E08",
+            "E09", "E10", "E11", "E12", "E13", "E14", "E15", "E16"]
+  figure_format: "png"
+  figure_dpi: 150
+  save_tables: true
+  save_config_snapshot: true
+  # Per-experiment overrides (accessible via config.experiments.params_for("E02")).
+  params:
+    E01:
+      devices: "all"
+      show_individual_subjects: true
+      bands_hz: [100, 1000, 4000]
+    E02:
+      report_frequencies_hz: [100, 250, 500, 1000, 2000, 4000, 8000]
+      ptpe_frequencies_hz: [100, 250, 500, 1000]
+    E03:
+      metric: "hha"
+      band_hz: [500, 4000]
+      icc_method: "icc2"
+    E04:
+      band_hz: [500, 4000]
+    E05:
+      condition: "measurement"
+      band_hz: [1000, 4000]
+    E06:
+      band_hz: [1000, 4000]
+    E07:
+      frequencies_hz: [125, 250, 500, 750, 1000, 2000]
+    E08:
+      comparison: "closed_vs_open"
+      band_hz: [500, 4000]
+      correction: "holm"
+    E09:
+      n_cases: 250
+      metric: "gain"
+    E10:
+      n_cases: 250
+      metric: "thd"
+    E11:
+      n_cases: 250
+      metric: "snr"
+    E12:
+      n_cases: 250
+      metric: "frequency_response"
+    E13:
+      static_levels_dbfs: [-40, -30, -20, -10]
+      tone_hz: 1000
+      attack_release_ms: [5, 50]
+      compression_ratio: 3.0
+      kneepoint_dbfs: -35.0
+    E14:
+      faults: ["clipping", "dropout", "dc_offset", "gain_error",
+               "harmonic_distortion", "latency"]
+      n_cases_per_fault: 10
+    E15:
+      tolerances:
+        magnitude_db: 0.01
+        phase_deg: 0.01
+        level_db: 0.01
+      matlab_timeout_s: 600
+    E16:
+      repeats: 3
+      n_synthetic_cases: 50
+      operations: ["load_mat", "fft", "stft", "psd", "fir_filter",
+                   "iir_filter", "virtual_ha", "synthetic_case"]
+
+# -----------------------------------------------------------------------------
+# Streamlit dashboard
+# -----------------------------------------------------------------------------
+dashboard:
+  title: "AcousticBench"
+  subtitle: "Electroacoustic Measurement, Validation & Reporting Toolkit"
+  default_condition: "measurement"
+  default_probe: "measurement"
+  default_devices: [2, 4, 6, 8, 10, 12, 14]
+  default_band_hz: [500, 4000]
+  max_subjects: 14
+  cache_ttl_s: 3600
+
+# -----------------------------------------------------------------------------
+# Automated reports
+# -----------------------------------------------------------------------------
+report:
+  title: "AcousticBench Measurement Report"
+  organisation: "AcousticBench"
+  include_figures: true
+  include_appendix: true
+  page_size: "A4"
+  excel_sheets: ["Summary", "Data Audit", "E01-E04", "E05-E08", "E09-E12", "E13-E16", "Statistics"]

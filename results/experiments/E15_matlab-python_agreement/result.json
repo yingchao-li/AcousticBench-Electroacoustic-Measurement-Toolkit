@@ -1,0 +1,99 @@
+{
+  "code": "E15",
+  "title": "MATLAB-Python Agreement",
+  "status": "completed",
+  "metrics": {
+    "matlab_available": false,
+    "matlab_executable": null,
+    "matlab_status": "not_run",
+    "matlab_error": "MATLAB is not installed in this environment. The MATLAB implementation, GUI and tests are provided (matlab/) but are explicitly NOT executed/verified here; see docs/matlab_status.md.",
+    "port_agreement_passed": true,
+    "port_n_comparisons": 6,
+    "port_comparison_max_abs_diff": {
+      "hha_band_db (port vs production)": 0.0,
+      "reoig_db (port vs production)": 5.329070518200751e-15,
+      "ptpe_hha_db (port vs production)": 1.099120794378905e-14,
+      "gain_db (port vs production)": 2.6645352591003757e-15,
+      "snr_db (port vs production)": 0.008515066203825583,
+      "thd_percent (port vs production)": 1.4566126083082054e-12
+    },
+    "port_comparison_tolerances": {
+      "hha_band_db (port vs production)": 0.01,
+      "reoig_db (port vs production)": 0.01,
+      "ptpe_hha_db (port vs production)": 0.01,
+      "gain_db (port vs production)": 0.01,
+      "snr_db (port vs production)": 0.05,
+      "thd_percent (port vs production)": 0.01
+    },
+    "matlab_agreement_passed": null,
+    "matlab_n_comparisons": 0,
+    "matlab_matched_test_ids": 0,
+    "expected_test_ids": 167,
+    "matlab_inputs_mat": "/Users/ingchaolee/PycharmProjects/AcousticBench/results/validation/matlab_inputs.mat",
+    "matlab_reference_csv": null,
+    "verification_statement": "Port-vs-production agreement executed in Python. MATLAB execution NOT performed: MATLAB is absent from this environment."
+  },
+  "tables": {
+    "port_comparisons": {
+      "rows": 6,
+      "columns": [
+        "name",
+        "unit",
+        "n",
+        "max_abs_diff",
+        "median_abs_diff",
+        "tolerance",
+        "passed"
+      ]
+    },
+    "matlab_comparisons": {
+      "rows": 0,
+      "columns": []
+    },
+    "expected_dataset_values": {
+      "rows": 142,
+      "columns": [
+        "test_id",
+        "quantity",
+        "unit",
+        "expected_python"
+      ]
+    }
+  },
+  "figures": [],
+  "artifacts": {
+    "tables": [
+      "port_comparisons.csv",
+      "matlab_comparisons.csv",
+      "expected_dataset_values.csv"
+    ],
+    "figures": [
+      "port_agreement.png"
+    ]
+  },
+  "warnings": [
+    "MATLAB is not installed: the MATLAB-side numerical agreement was NOT executed. MATLAB code, GUI and tests are provided but unverified (docs/matlab_status.md). The MATLAB input file and CSV contract are nevertheless generated under results/validation/ so the comparison can be run elsewhere."
+  ],
+  "narrative": "The production Python implementation and an independently written MATLAB-transcribed Python port agree to numerical precision on real data (band levels, REOIG, PTPE) and on synthetic gain/SNR/THD signals. The MATLAB input file and the exact CSV contract are generated so that `matlab/run_cross_language_export.m` can be run on a machine with MATLAB; here that step is marked NOT RUN because MATLAB is unavailable. This distinction is deliberate: port agreement demonstrates algorithmic consistency, not execution of the MATLAB code.",
+  "duration_s": 5.079,
+  "parameters": {
+    "code": "E15",
+    "tolerances": {
+      "magnitude_db": 0.01,
+      "phase_deg": 0.01,
+      "level_db": 0.01
+    },
+    "matlab_timeout_s": 600
+  },
+  "data_provenance": {
+    "dataset_path": "Data.mat",
+    "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+    "mat_format": "v5",
+    "n_frequencies": 2049,
+    "n_subjects": 14,
+    "n_reinsertions": 3,
+    "n_devices": 14,
+    "invalid_policy": "exclude"
+  },
+  "error": null
+}

@@ -1,0 +1,126 @@
+{
+  "code": "E12",
+  "title": "Filter Response Estimation",
+  "status": "completed",
+  "metrics": {
+    "n_cases": 250,
+    "n_reference_cases": 100,
+    "target_mae_db": 0.5,
+    "reference_condition": "logarithmic sweep 100 Hz\u202610 kHz, 4 s, no noise, no compression; deconvolution vs. known filter response",
+    "reference_summary": {
+      "n": 100,
+      "median_abs_error": 0.01609738845800164,
+      "mean_abs_error": 0.02206612414629543,
+      "p95_abs_error": 0.06092825513666089,
+      "max_abs_error": 0.0694341018529119,
+      "fraction_within_target": 1.0,
+      "target": 0.5,
+      "unit": "dB",
+      "target_met": true
+    },
+    "full_parameter_range_summary": {
+      "n": 250,
+      "median_abs_error": 0.01649717753541649,
+      "mean_abs_error": 0.0248244125110643,
+      "p95_abs_error": 0.06149071032014708,
+      "max_abs_error": 0.18617645889230372,
+      "fraction_within_target": 1.0,
+      "target": 0.5,
+      "unit": "dB",
+      "target_met": true
+    },
+    "by_filter_type": {
+      "bandpass": {
+        "n": 55,
+        "median_abs_error": 0.017448425225827867,
+        "mean_abs_error": 0.020268906814919576,
+        "p95_abs_error": 0.028294812893217572,
+        "max_abs_error": 0.029493385043998777,
+        "fraction_within_target": 1.0,
+        "target": 0.5,
+        "unit": "dB",
+        "target_met": true
+      },
+      "highpass": {
+        "n": 68,
+        "median_abs_error": 0.04701717049615954,
+        "mean_abs_error": 0.05358951114483419,
+        "p95_abs_error": 0.08389890074702902,
+        "max_abs_error": 0.18617645889230372,
+        "fraction_within_target": 1.0,
+        "target": 0.5,
+        "unit": "dB",
+        "target_met": true
+      },
+      "lowpass": {
+        "n": 61,
+        "median_abs_error": 0.016111162887304756,
+        "mean_abs_error": 0.015563926759974846,
+        "p95_abs_error": 0.01691794316203321,
+        "max_abs_error": 0.017537163149699785,
+        "fraction_within_target": 1.0,
+        "target": 0.5,
+        "unit": "dB",
+        "target_met": true
+      },
+      "peaking": {
+        "n": 66,
+        "median_abs_error": 0.00046675383157316025,
+        "mean_abs_error": 0.0075428327687622415,
+        "p95_abs_error": 0.04207080482751736,
+        "max_abs_error": 0.07755879186458184,
+        "fraction_within_target": 1.0,
+        "target": 0.5,
+        "unit": "dB",
+        "target_met": true
+      }
+    },
+    "target_met_in_reference_condition": true,
+    "note": "The magnitude error is evaluated on the documented logarithmic evaluation grid within a 20 dB dynamic range of the pass-band; the phase is estimated but not scored because absolute delay is not part of the ground truth."
+  },
+  "tables": {
+    "frequency_response_case_results": {
+      "rows": 250,
+      "columns": [
+        "case_id",
+        "filter_type",
+        "cutoff_hz",
+        "noise_snr_db",
+        "mae_db",
+        "max_abs_error_db",
+        "n_evaluation_points",
+        "is_reference_condition"
+      ]
+    }
+  },
+  "figures": [],
+  "artifacts": {
+    "tables": [
+      "frequency_response_case_results.csv"
+    ],
+    "figures": [
+      "fr_example.png",
+      "fr_mae_histogram.png",
+      "fr_mae_by_filter.png"
+    ]
+  },
+  "warnings": [],
+  "narrative": "The H1 estimator recovers the magnitude response with a median MAE of 0.0161 dB in the reference condition (target 0.5 dB). The wider range adds sweep bands and noise; those cases are reported separately. Deep stop bands are excluded by the documented dynamic-range mask, since a finite-dynamic-range measurement cannot resolve them.",
+  "duration_s": 3.49,
+  "parameters": {
+    "code": "E12",
+    "n_cases": 250,
+    "metric": "frequency_response"
+  },
+  "data_provenance": {
+    "dataset_path": "Data.mat",
+    "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+    "mat_format": "v5",
+    "n_frequencies": 2049,
+    "n_subjects": 14,
+    "n_reinsertions": 3,
+    "n_devices": 14,
+    "invalid_policy": "exclude"
+  },
+  "error": null
+}

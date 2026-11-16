@@ -1,0 +1,79 @@
+{
+  "code": "E09",
+  "title": "Gain Estimation",
+  "status": "completed",
+  "metrics": {
+    "n_cases": 250,
+    "n_reference_cases": 100,
+    "target_db": 0.1,
+    "reference_condition": "1 kHz tone, no compression, no noise, 4 s, -20 dBFS; estimate from the DFT bin of the tone",
+    "reference_summary": {
+      "n": 100,
+      "median_abs_error": 1.5543122344752192e-15,
+      "mean_abs_error": 1.3913870056114775e-15,
+      "p95_abs_error": 3.552713678800501e-15,
+      "max_abs_error": 5.329070518200751e-15,
+      "fraction_within_target": 1.0,
+      "target": 0.1,
+      "unit": "dB",
+      "target_met": true
+    },
+    "full_parameter_range_summary": {
+      "n": 250,
+      "median_abs_error": 0.0,
+      "mean_abs_error": 1.1409762024072733e-15,
+      "p95_abs_error": 3.552713678800501e-15,
+      "max_abs_error": 7.105427357601002e-15,
+      "fraction_within_target": 1.0,
+      "target": 0.1,
+      "unit": "dB",
+      "target_met": true
+    },
+    "target_met_in_reference_condition": true,
+    "note": "The estimator receives only input/output waveforms and the tone frequency. Errors are expressed in dB relative to the applying gain."
+  },
+  "tables": {
+    "gain_case_results": {
+      "rows": 250,
+      "columns": [
+        "case_id",
+        "tone_hz",
+        "input_level_dbfs",
+        "gain_db_true",
+        "gain_db_estimated",
+        "error_db",
+        "is_reference_condition"
+      ]
+    }
+  },
+  "figures": [],
+  "artifacts": {
+    "tables": [
+      "gain_case_results.csv"
+    ],
+    "figures": [
+      "gain_scatter.png",
+      "gain_error_histogram.png",
+      "gain_error_vs_tone.png"
+    ]
+  },
+  "warnings": [],
+  "narrative": "The coherent single-bin tone projection recovers the applied gain to within 5.33e-15 dB in the reference condition (target 0.1 dB) and remains accurate over the wider gain/level/frequency range. Because the estimate uses the input waveform as reference, it is insensitive to the absolute playback level and therefore directly transferable to a real measurement where the drive level is known.",
+  "duration_s": 2.347,
+  "parameters": {
+    "code": "E09",
+    "n_cases": 250,
+    "metric": "gain"
+  },
+  "data_provenance": {
+    "dataset_path": "Data.mat",
+    "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+    "mat_format": "v5",
+    "n_frequencies": 2049,
+    "n_subjects": 14,
+    "n_reinsertions": 3,
+    "n_devices": 14,
+    "invalid_policy": "exclude"
+  },
+  "error": null
+}

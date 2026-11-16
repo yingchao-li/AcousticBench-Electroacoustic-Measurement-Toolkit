@@ -1,0 +1,7 @@
+name,unit,n,max_abs_diff,median_abs_diff,tolerance,passed
+hha_band_db (port vs production),dB,36,0,0,0.01,True
+reoig_db (port vs production),dB,63,5.3290705182e-15,1.7763568394e-15,0.01,True
+ptpe_hha_db (port vs production),dB,36,1.09912079438e-14,2.52575738102e-15,0.01,True
+gain_db (port vs production),dB,7,2.6645352591e-15,0,0.01,True
+snr_db (port vs production),dB,7,0.00851506620383,0.00231599421925,0.05,True
+thd_percent (port vs production),pp,7,1.45661260831e-12,8.52651282912e-14,0.01,True

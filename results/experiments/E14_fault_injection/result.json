@@ -1,0 +1,91 @@
+{
+  "code": "E14",
+  "title": "Fault Injection",
+  "status": "completed",
+  "metrics": {
+    "n_fault_types": 6,
+    "n_detected_within_tolerance": 6,
+    "detection_rate": 1.0,
+    "mean_relative_error_percent": 0.001157407407548525,
+    "tolerances": {
+      "clipping": {
+        "unit": "dBFS",
+        "tolerance": 0.5
+      },
+      "dropout": {
+        "unit": "s",
+        "tolerance": 0.01
+      },
+      "dc_offset": {
+        "unit": "linear",
+        "tolerance": 0.0001
+      },
+      "gain_error": {
+        "unit": "dB",
+        "tolerance": 0.2
+      },
+      "harmonic_distortion": {
+        "unit": "%",
+        "tolerance": 0.2
+      },
+      "latency": {
+        "unit": "ms",
+        "tolerance": 0.03125
+      }
+    },
+    "deterministic_repetitions_per_fault": 10,
+    "note": "Detection uses only the measured output; true injected parameters are used solely for scoring."
+  },
+  "tables": {
+    "fault_detection": {
+      "rows": 6,
+      "columns": [
+        "fault_type",
+        "true_parameter",
+        "true_value",
+        "measured_value",
+        "unit",
+        "absolute_error",
+        "relative_error_percent",
+        "tolerance",
+        "detected"
+      ]
+    }
+  },
+  "figures": [],
+  "artifacts": {
+    "tables": [
+      "fault_detection.csv"
+    ],
+    "figures": [
+      "fault_waveforms.png",
+      "fault_detection.png"
+    ]
+  },
+  "warnings": [],
+  "narrative": "All six fault types are injected deterministically and recovered from the output: clipping from the peak level, dropout from the silent interval, DC offset from the signal mean, gain error from the tone amplitude, harmonic distortion from the harmonic amplitudes and latency from the cross-correlation lag. The detection table reports the true value, the measured value and the error, so the validation claim is fully auditable rather than asserted.",
+  "duration_s": 0.142,
+  "parameters": {
+    "code": "E14",
+    "faults": [
+      "clipping",
+      "dropout",
+      "dc_offset",
+      "gain_error",
+      "harmonic_distortion",
+      "latency"
+    ],
+    "n_cases_per_fault": 10
+  },
+  "data_provenance": {
+    "dataset_path": "Data.mat",
+    "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+    "mat_format": "v5",
+    "n_frequencies": 2049,
+    "n_subjects": 14,
+    "n_reinsertions": 3,
+    "n_devices": 14,
+    "invalid_policy": "exclude"
+  },
+  "error": null
+}

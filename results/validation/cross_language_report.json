@@ -1,0 +1,72 @@
+{
+  "matlab_available": false,
+  "matlab_executable": null,
+  "matlab_status": "not_run",
+  "matlab_reference_csv": null,
+  "matlab_error": "MATLAB is not installed in this environment. The MATLAB implementation, GUI and tests are provided (matlab/) but are explicitly NOT executed/verified here; see docs/matlab_status.md.",
+  "matlab_comparisons": [],
+  "port_comparisons": [
+    {
+      "name": "hha_band_db (port vs production)",
+      "unit": "dB",
+      "n": 36,
+      "max_abs_diff": 0.0,
+      "median_abs_diff": 0.0,
+      "tolerance": 0.01,
+      "passed": true
+    },
+    {
+      "name": "reoig_db (port vs production)",
+      "unit": "dB",
+      "n": 63,
+      "max_abs_diff": 5.329070518200751e-15,
+      "median_abs_diff": 1.7763568394002505e-15,
+      "tolerance": 0.01,
+      "passed": true
+    },
+    {
+      "name": "ptpe_hha_db (port vs production)",
+      "unit": "dB",
+      "n": 36,
+      "max_abs_diff": 1.099120794378905e-14,
+      "median_abs_diff": 2.525757381022231e-15,
+      "tolerance": 0.01,
+      "passed": true
+    },
+    {
+      "name": "gain_db (port vs production)",
+      "unit": "dB",
+      "n": 7,
+      "max_abs_diff": 2.6645352591003757e-15,
+      "median_abs_diff": 0.0,
+      "tolerance": 0.01,
+      "passed": true
+    },
+    {
+      "name": "snr_db (port vs production)",
+      "unit": "dB",
+      "n": 7,
+      "max_abs_diff": 0.008515066203825583,
+      "median_abs_diff": 0.0023159942192485516,
+      "tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "name": "thd_percent (port vs production)",
+      "unit": "pp",
+      "n": 7,
+      "max_abs_diff": 1.4566126083082054e-12,
+      "median_abs_diff": 8.526512829121202e-14,
+      "tolerance": 0.01,
+      "passed": true
+    }
+  ],
+  "inputs_mat": "/Users/ingchaolee/PycharmProjects/AcousticBench/results/validation/matlab_inputs.mat",
+  "expected_test_ids": 167,
+  "matched_matlab_test_ids": 0,
+  "port_agreement_passed": true,
+  "matlab_agreement_passed": null,
+  "notes": [
+    "MATLAB-side agreement not executed; only port-vs-production agreement is reported."
+  ]
+}

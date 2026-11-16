@@ -1,0 +1,148 @@
+{
+  "code": "E03",
+  "title": "Measurement Repeatability",
+  "status": "completed",
+  "metrics": {
+    "n_subjects": 14,
+    "wide_band_hz": [
+      500.0,
+      4000.0
+    ],
+    "median_within_subject_sd_500_4000Hz_db_by_family": {
+      "closed_earmold": 0.4221474438240373,
+      "vented_earmold": 0.25439077305810653,
+      "nugget_earmold": 0.4614889900733945,
+      "silicone_earmold": 0.2792952666504227,
+      "open_dome": 0.3697240342773186,
+      "tulip_dome": 0.38379709903873427,
+      "power_dome": 0.4248518910618781
+    },
+    "repeatability_coefficient_500_4000Hz_db_by_family": {
+      "closed_earmold": 1.170133015139092,
+      "vented_earmold": 0.7051352475466468,
+      "nugget_earmold": 1.2791822177494079,
+      "silicone_earmold": 0.7741669818471301,
+      "open_dome": 1.024822737476147,
+      "tulip_dome": 1.0638312828136547,
+      "power_dome": 1.1776293604255468
+    },
+    "icc_2_1_500_4000Hz_by_family": {
+      "closed_earmold": 0.7651494122879959,
+      "vented_earmold": 0.9829426367871402,
+      "nugget_earmold": 0.8704085366515857,
+      "silicone_earmold": 0.9598529434932842,
+      "open_dome": 0.9484688686653725,
+      "tulip_dome": 0.9380455553387284,
+      "power_dome": 0.905453851298046
+    },
+    "overall_median_sd_500_4000Hz_db": 0.38379709903873427,
+    "worst_band": {
+      "band": "63 Hz",
+      "family": "power_dome",
+      "sd_db": 3.501105206285194
+    },
+    "note": "SD is taken across the three reinsertions of the same subject; the probe tubes stayed in place between reinsertions."
+  },
+  "tables": {
+    "repeatability_summary": {
+      "rows": 63,
+      "columns": [
+        "band",
+        "band_center_hz",
+        "device_code",
+        "device",
+        "family",
+        "coupling",
+        "condition",
+        "n_subjects",
+        "median_level_db",
+        "sd_reinsertion_db_median",
+        "sd_reinsertion_db_p95",
+        "repeatability_coefficient_db",
+        "icc_2_1"
+      ]
+    },
+    "repeatability_wide_band": {
+      "rows": 7,
+      "columns": [
+        "band",
+        "band_center_hz",
+        "device_code",
+        "device",
+        "family",
+        "coupling",
+        "condition",
+        "n_subjects",
+        "median_level_db",
+        "sd_reinsertion_db_median",
+        "sd_reinsertion_db_p95",
+        "repeatability_coefficient_db",
+        "icc_2_1"
+      ]
+    },
+    "reinsertion_sd_by_frequency": {
+      "rows": 200312,
+      "columns": [
+        "frequency_hz",
+        "device_code",
+        "device",
+        "family",
+        "coupling",
+        "condition",
+        "subject",
+        "n_reinsertions",
+        "sd_db",
+        "range_db"
+      ]
+    },
+    "reinsertion_sd_frequency_summary": {
+      "rows": 14308,
+      "columns": [
+        "family",
+        "frequency_hz",
+        "median_sd_db",
+        "q25_sd_db",
+        "q75_sd_db",
+        "n"
+      ]
+    }
+  },
+  "figures": [],
+  "artifacts": {
+    "tables": [
+      "repeatability_summary.csv",
+      "repeatability_wide_band.csv",
+      "reinsertion_sd_by_frequency.csv.gz",
+      "reinsertion_sd_frequency_summary.csv.gz"
+    ],
+    "figures": [
+      "reinsertion_sd_spectrum.png",
+      "reinsertion_sd_bands.png",
+      "icc_bands.png",
+      "reinsertion_example.png"
+    ]
+  },
+  "warnings": [],
+  "narrative": "Reinsertion variability is a few dB in the mid frequencies and grows at the spectral extremes and for loosely coupled domes. The repeatability coefficient sets the smallest probe-tube presence effect that can be resolved for a single ear; the ICC indicates how much of the between-measurement variance is explained by the subject (high ICC = the ear dominates, low ICC = reinsertion noise dominates).",
+  "duration_s": 0.75,
+  "parameters": {
+    "code": "E03",
+    "metric": "hha",
+    "band_hz": [
+      500,
+      4000
+    ],
+    "icc_method": "icc2"
+  },
+  "data_provenance": {
+    "dataset_path": "Data.mat",
+    "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+    "mat_format": "v5",
+    "n_frequencies": 2049,
+    "n_subjects": 14,
+    "n_reinsertions": 3,
+    "n_devices": 14,
+    "invalid_policy": "exclude"
+  },
+  "error": null
+}

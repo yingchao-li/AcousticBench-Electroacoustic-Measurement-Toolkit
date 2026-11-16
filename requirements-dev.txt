@@ -1,0 +1,6 @@
+# Development / analysis extras.
+-r requirements.txt
+pytest>=8.0
+pytest-cov>=5.0
+pypdf>=4.0
+pymupdf>=1.24

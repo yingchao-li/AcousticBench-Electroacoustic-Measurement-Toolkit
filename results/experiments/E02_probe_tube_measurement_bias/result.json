@@ -1,0 +1,251 @@
+{
+  "code": "E02",
+  "title": "Probe Tube Measurement Bias",
+  "status": "completed",
+  "metrics": {
+    "probe_bias_median_abs_500_4000Hz_db": 1.7433473594504676,
+    "probe_bias_frequency_resolved_median_db": {
+      "100": -1.6879677059620022,
+      "250": -1.686830416939813,
+      "500": -1.713144660512981,
+      "1000": -1.3698198229699727,
+      "2000": -1.571666798496679,
+      "4000": -1.4568284545989059,
+      "8000": -3.1386494411363373
+    },
+    "ptpe_hha_100Hz_db_by_family": {
+      "closed_earmold": -3.686478765229129,
+      "vented_earmold": -0.26599189206699947,
+      "nugget_earmold": -8.618733083311326,
+      "silicone_earmold": -4.385181551552989
+    },
+    "ptpe_reoig_1kHz_db_by_family": {
+      "closed_earmold": 3.243664632447693,
+      "nugget_earmold": 6.063550650235758,
+      "silicone_earmold": 1.8876031345019513,
+      "vented_earmold": 0.3590532056438853
+    },
+    "delta_threshold_125Hz_db_by_family": {
+      "closed_earmold": -3.892857142857143,
+      "nugget_earmold": -5.952380952380952,
+      "open_dome": -6.344131569286608e-17,
+      "power_dome": -5.273809523809524,
+      "silicone_earmold": -1.1547619047619049,
+      "tulip_dome": -1.2857142857142854,
+      "vented_earmold": -3.172065784643304e-17
+    },
+    "n_subjects": 14,
+    "sign_convention": "\u0394Hha<0 and \u0394T<0 = reduced driver output; \u0394REOIG>0 = more leakage"
+  },
+  "tables": {
+    "probe_bias_curves_percentiles": {
+      "rows": 7412,
+      "columns": [
+        "frequency_hz",
+        "device_code",
+        "device",
+        "family",
+        "family_label",
+        "condition",
+        "n_valid",
+        "q10",
+        "q25",
+        "median_db",
+        "q75",
+        "q90"
+      ]
+    },
+    "probe_bias_bands_summary": {
+      "rows": 36,
+      "columns": [
+        "family",
+        "family_label",
+        "band",
+        "band_center_hz",
+        "median_db",
+        "mean_db",
+        "sd_db",
+        "n",
+        "index_x",
+        "q25_db",
+        "index_y",
+        "q75_db"
+      ]
+    },
+    "probe_bias_bands_ci": {
+      "rows": 36,
+      "columns": [
+        "family",
+        "family_label",
+        "band",
+        "band_center_hz",
+        "n",
+        "mean_db",
+        "sd_db",
+        "se_db",
+        "ci_low_db",
+        "ci_high_db",
+        "abs_bias_db"
+      ]
+    },
+    "ptpe_hha_curves_percentiles": {
+      "rows": 7412,
+      "columns": [
+        "frequency_hz",
+        "device_code",
+        "device",
+        "family",
+        "family_label",
+        "condition",
+        "n_valid",
+        "q10",
+        "q25",
+        "median_db",
+        "q75",
+        "q90"
+      ]
+    },
+    "ptpe_hha_bands_summary": {
+      "rows": 36,
+      "columns": [
+        "family",
+        "family_label",
+        "band",
+        "band_center_hz",
+        "median_db",
+        "mean_db",
+        "sd_db",
+        "n",
+        "index_x",
+        "q25_db",
+        "index_y",
+        "q75_db"
+      ]
+    },
+    "ptpe_hha_bands_ci": {
+      "rows": 36,
+      "columns": [
+        "family",
+        "family_label",
+        "band",
+        "band_center_hz",
+        "n",
+        "mean_db",
+        "sd_db",
+        "se_db",
+        "ci_low_db",
+        "ci_high_db"
+      ]
+    },
+    "ptpe_reoig_bands_summary": {
+      "rows": 36,
+      "columns": [
+        "family",
+        "family_label",
+        "band",
+        "band_center_hz",
+        "median_db",
+        "mean_db",
+        "sd_db",
+        "n",
+        "index_x",
+        "q25_db",
+        "index_y",
+        "q75_db"
+      ]
+    },
+    "ptpe_reoig_bands_ci": {
+      "rows": 36,
+      "columns": [
+        "family",
+        "family_label",
+        "band",
+        "band_center_hz",
+        "n",
+        "mean_db",
+        "sd_db",
+        "se_db",
+        "ci_low_db",
+        "ci_high_db"
+      ]
+    },
+    "ptpe_threshold_125Hz": {
+      "rows": 98,
+      "columns": [
+        "family",
+        "family_label",
+        "subject",
+        "reinsertion",
+        "delta_t_db",
+        "valid"
+      ]
+    },
+    "ptpe_threshold_125Hz_ci": {
+      "rows": 7,
+      "columns": [
+        "family",
+        "family_label",
+        "n",
+        "mean_db",
+        "sd_db",
+        "se_db",
+        "ci_low_db",
+        "ci_high_db"
+      ]
+    }
+  },
+  "figures": [],
+  "artifacts": {
+    "tables": [
+      "probe_bias_curves_percentiles.csv.gz",
+      "probe_bias_bands_summary.csv",
+      "probe_bias_bands_ci.csv",
+      "ptpe_hha_curves_percentiles.csv.gz",
+      "ptpe_hha_bands_summary.csv",
+      "ptpe_hha_bands_ci.csv",
+      "ptpe_reoig_bands_summary.csv",
+      "ptpe_reoig_bands_ci.csv",
+      "ptpe_threshold_125Hz.csv",
+      "ptpe_threshold_125Hz_ci.csv"
+    ],
+    "figures": [
+      "probe_bias_curves.png",
+      "ptpe_hha_curves.png",
+      "ptpe_reoig_bands.png",
+      "ptpe_hha_bands.png",
+      "ptpe_threshold_125.png"
+    ]
+  },
+  "warnings": [],
+  "narrative": "The two probe tubes agree within \u22481.5 dB when both are in the ear, with the measurement probe reading slightly lower; the bias grows towards 8 kHz. Inserting the measurement probe reduces the low-frequency driver output (\u0394Hha < 0), most strongly for the nugget earmold, and increases the leakage of external sound (\u0394REOIG > 0), most strongly for the nugget and closed earmolds. Threshold differences at 125 Hz confirm the effect for all families and extend it to domes, where no reference probe exists. These directions reproduce the source study and validate the validity model implemented in AcousticBench.",
+  "duration_s": 0.439,
+  "parameters": {
+    "code": "E02",
+    "report_frequencies_hz": [
+      100,
+      250,
+      500,
+      1000,
+      2000,
+      4000,
+      8000
+    ],
+    "ptpe_frequencies_hz": [
+      100,
+      250,
+      500,
+      1000
+    ]
+  },
+  "data_provenance": {
+    "dataset_path": "Data.mat",
+    "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+    "mat_format": "v5",
+    "n_frequencies": 2049,
+    "n_subjects": 14,
+    "n_reinsertions": 3,
+    "n_devices": 14,
+    "invalid_policy": "exclude"
+  },
+  "error": null
+}

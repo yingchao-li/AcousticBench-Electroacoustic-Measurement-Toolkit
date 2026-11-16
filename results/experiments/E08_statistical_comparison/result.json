@@ -1,0 +1,108 @@
+{
+  "code": "E08",
+  "title": "Statistical Comparison",
+  "status": "completed",
+  "metrics": {
+    "n_tests": 18,
+    "n_primary_family_tests": 15,
+    "alpha": 0.05,
+    "correction": "holm (within primary family tests)",
+    "bootstrap": {
+      "n_resamples": 10000,
+      "confidence": 0.95,
+      "seed": 20260422,
+      "method": "percentile"
+    },
+    "significant_tests_holm": [
+      "ptpe_hha_125Hz_nugget_earmold",
+      "ptpe_hha_125Hz_silicone_earmold",
+      "ptpe_reoig_1kHz_closed_earmold",
+      "ptpe_reoig_1kHz_nugget_earmold",
+      "ptpe_threshold_125Hz_closed_earmold",
+      "ptpe_threshold_125Hz_power_dome"
+    ],
+    "closed_vs_open_hha_1kHz_mean_difference_db": 12.452558966594328,
+    "closed_vs_open_hha_1kHz_p_value": 8.368493225391848e-09,
+    "probe_bias_1kHz_mean_db": -0.5754651922840883,
+    "probe_bias_1kHz_p_value": 0.19686251067308272,
+    "note": "Differences are a \u2212 b. Positive \u0394REOIG means more leakage; negative \u0394Hha/\u0394T mean reduced driver output."
+  },
+  "tables": {
+    "paired_tests": {
+      "rows": 18,
+      "columns": [
+        "test_id",
+        "metric",
+        "family",
+        "comparison",
+        "n",
+        "mean_a",
+        "mean_b",
+        "mean_diff",
+        "ci_low",
+        "ci_high",
+        "bootstrap_ci_low",
+        "bootstrap_ci_high",
+        "t",
+        "df",
+        "p_value",
+        "p_wilcoxon",
+        "cohen_dz",
+        "rank_biserial",
+        "shapiro_p",
+        "holm_family",
+        "p_holm",
+        "significant_holm"
+      ]
+    },
+    "subject_level_data": {
+      "rows": 252,
+      "columns": [
+        "test_id",
+        "metric",
+        "family",
+        "subject",
+        "a",
+        "b",
+        "difference"
+      ]
+    }
+  },
+  "figures": [],
+  "artifacts": {
+    "tables": [
+      "paired_tests.csv",
+      "subject_level_data.csv"
+    ],
+    "figures": [
+      "forest_effects.png",
+      "closed_vs_open_scatter.png",
+      "paired_differences.png"
+    ]
+  },
+  "warnings": [
+    "Shapiro\u2013Wilk indicates non-normal paired differences in at least one test; Wilcoxon p-values are reported alongside the t-tests."
+  ],
+  "narrative": "All probe-tube presence effects are tested at the subject level with paired designs and interpreted against effect sizes and 95 % confidence intervals rather than p-values alone. Holm correction controls the family-wise error rate across the family-level tests. The closed-vs-open comparison quantifies the large acoustic difference between occluding and open couplings, while the probe-bias test shows whether the two probe microphones differ systematically.",
+  "duration_s": 0.41,
+  "parameters": {
+    "code": "E08",
+    "comparison": "closed_vs_open",
+    "band_hz": [
+      500,
+      4000
+    ],
+    "correction": "holm"
+  },
+  "data_provenance": {
+    "dataset_path": "Data.mat",
+    "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+    "mat_format": "v5",
+    "n_frequencies": 2049,
+    "n_subjects": 14,
+    "n_reinsertions": 3,
+    "n_devices": 14,
+    "invalid_policy": "exclude"
+  },
+  "error": null
+}

@@ -1,0 +1,40 @@
+{
+  "project_seed": 20260422,
+  "analysis": {
+    "alpha": 0.05,
+    "correction": "holm",
+    "bootstrap": {
+      "n_resamples": 10000,
+      "confidence": 0.95,
+      "seed": 20260422,
+      "method": "percentile"
+    },
+    "bands": {
+      "method": "octave",
+      "custom_edges_hz": [
+        20.0,
+        100.0,
+        250.0,
+        500.0,
+        1000.0,
+        2000.0,
+        4000.0,
+        8000.0,
+        16000.0,
+        22050.0
+      ]
+    }
+  },
+  "experiment_parameters": {
+    "code": "E05",
+    "condition": "measurement",
+    "band_hz": [
+      1000,
+      4000
+    ]
+  },
+  "figures": {
+    "format": "png",
+    "dpi": 150
+  }
+}

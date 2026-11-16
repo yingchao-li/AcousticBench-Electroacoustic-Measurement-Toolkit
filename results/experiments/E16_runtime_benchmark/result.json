@@ -1,0 +1,75 @@
+{
+  "code": "E16",
+  "title": "Runtime Benchmark",
+  "status": "completed",
+  "metrics": {
+    "n_operations": 14,
+    "repeats": 3,
+    "total_median_ms": 276.8542915582657,
+    "slowest_operation": "load_mat (no hash)",
+    "slowest_median_ms": 204.85700014978647,
+    "fastest_operation": "design_fir (101 taps)",
+    "fastest_median_ms": 0.04254188388586044,
+    "environment": {
+      "python": "3.12.16",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "processor": "arm",
+      "cpu_count": 10
+    },
+    "matlab_benchmark": "not_run (MATLAB unavailable in this environment)",
+    "note": "Times are wall-clock medians; they include Python overhead and are intended as a relative regression baseline, not as hard real-time guarantees."
+  },
+  "tables": {
+    "runtime_benchmark": {
+      "rows": 14,
+      "columns": [
+        "operation",
+        "category",
+        "repeats",
+        "median_ms",
+        "min_ms",
+        "max_ms",
+        "throughput_4s_per_s"
+      ]
+    }
+  },
+  "figures": [],
+  "artifacts": {
+    "tables": [
+      "runtime_benchmark.csv"
+    ],
+    "figures": [
+      "runtime_benchmark.png",
+      "runtime_by_category.png"
+    ]
+  },
+  "warnings": [],
+  "narrative": "The complete benchmark (14 operations) runs in 0.28 s. The slowest operation is load_mat (no hash) (204.9 ms). FFT/PSD/STFT operations are dominated by the 4 s signal length; the estimators and the virtual device are cheap relative to data loading. No MATLAB timing is reported because MATLAB is unavailable.",
+  "duration_s": 0.905,
+  "parameters": {
+    "code": "E16",
+    "repeats": 3,
+    "n_synthetic_cases": 50,
+    "operations": [
+      "load_mat",
+      "fft",
+      "stft",
+      "psd",
+      "fir_filter",
+      "iir_filter",
+      "virtual_ha",
+      "synthetic_case"
+    ]
+  },
+  "data_provenance": {
+    "dataset_path": "Data.mat",
+    "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+    "mat_format": "v5",
+    "n_frequencies": 2049,
+    "n_subjects": 14,
+    "n_reinsertions": 3,
+    "n_devices": 14,
+    "invalid_policy": "exclude"
+  },
+  "error": null
+}

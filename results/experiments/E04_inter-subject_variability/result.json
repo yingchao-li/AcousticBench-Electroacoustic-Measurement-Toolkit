@@ -1,0 +1,152 @@
+{
+  "code": "E04",
+  "title": "Inter-subject Variability",
+  "status": "completed",
+  "metrics": {
+    "n_subjects": 14,
+    "between_subject_sd_500_4000Hz_db_by_family": {
+      "closed_earmold": 1.9566686655065557,
+      "vented_earmold": 2.088836660173946,
+      "nugget_earmold": 1.3673070792635484,
+      "silicone_earmold": 1.7283602828039588,
+      "open_dome": 2.2047292060955197,
+      "tulip_dome": 2.1939429071435024,
+      "power_dome": 1.6232122822322343
+    },
+    "icc_1_1_500_4000Hz_by_family": {
+      "closed_earmold": 0.7655527876224243,
+      "vented_earmold": 0.9829503094775638,
+      "nugget_earmold": 0.8702204487204023,
+      "silicone_earmold": 0.9598815874096113,
+      "open_dome": 0.9485246393602884,
+      "tulip_dome": 0.9380076024756894,
+      "power_dome": 0.9056595778527226
+    },
+    "within_subject_sd_500_4000Hz_db_by_family": {
+      "closed_earmold": 0.8585339812921956,
+      "vented_earmold": 0.2727479507438501,
+      "nugget_earmold": 0.506649221881231,
+      "silicone_earmold": 0.3458102185055354,
+      "open_dome": 0.5090232743817863,
+      "tulip_dome": 0.5579041303459282,
+      "power_dome": 0.5150267414649433
+    },
+    "ratio_between_to_within_by_family": {
+      "closed_earmold": 1.8070286343492796,
+      "vented_earmold": 7.592897404642906,
+      "nugget_earmold": 2.589473721215032,
+      "silicone_earmold": 4.891442585878213,
+      "open_dome": 4.292641396507903,
+      "tulip_dome": 3.889859927018861,
+      "power_dome": 3.0983721804026723
+    },
+    "note": "Between-subject SD uses subject-level means (reinsertions averaged); variance components are one-way random-effects estimates.",
+    "most_variable_family": {
+      "family": "open_dome",
+      "sd_db": 2.2047292060955197
+    }
+  },
+  "tables": {
+    "inter_subject_variability": {
+      "rows": 63,
+      "columns": [
+        "band",
+        "band_center_hz",
+        "device_code",
+        "device",
+        "family",
+        "coupling",
+        "condition",
+        "n_subjects",
+        "n_subjects_complete",
+        "mean_level_db",
+        "sd_between_subject_db",
+        "iqr_db",
+        "range_db",
+        "cv_db",
+        "between_subject_variance_db2",
+        "within_subject_variance_db2",
+        "icc_1_1"
+      ]
+    },
+    "inter_subject_variability_wide_band": {
+      "rows": 7,
+      "columns": [
+        "band",
+        "band_center_hz",
+        "device_code",
+        "device",
+        "family",
+        "coupling",
+        "condition",
+        "n_subjects",
+        "n_subjects_complete",
+        "mean_level_db",
+        "sd_between_subject_db",
+        "iqr_db",
+        "range_db",
+        "cv_db",
+        "between_subject_variance_db2",
+        "within_subject_variance_db2",
+        "icc_1_1"
+      ]
+    },
+    "between_subject_sd_by_frequency": {
+      "rows": 14308,
+      "columns": [
+        "frequency_hz",
+        "device_code",
+        "family",
+        "family_label",
+        "sd_between_subject_db",
+        "n_subjects"
+      ]
+    },
+    "between_subject_sd_frequency_summary": {
+      "rows": 14308,
+      "columns": [
+        "family",
+        "frequency_hz",
+        "median_sd_db",
+        "q25_sd_db",
+        "q75_sd_db"
+      ]
+    }
+  },
+  "figures": [],
+  "artifacts": {
+    "tables": [
+      "inter_subject_variability.csv",
+      "inter_subject_variability_wide_band.csv",
+      "between_subject_sd_by_frequency.csv.gz",
+      "between_subject_sd_frequency_summary.csv.gz"
+    ],
+    "figures": [
+      "between_subject_sd_spectrum.png",
+      "between_subject_sd_bands.png",
+      "variance_decomposition.png",
+      "between_subject_heatmap.png"
+    ]
+  },
+  "warnings": [],
+  "narrative": "Between-ear differences dominate the reinsertion noise for occluding couplings, especially at low frequencies where ear-canal volume and earpiece fit vary strongly. For open domes the between-ear spread is smaller at low frequencies but still substantial. This justifies treating the subject as the independent statistical unit and using paired designs wherever possible.",
+  "duration_s": 0.764,
+  "parameters": {
+    "code": "E04",
+    "band_hz": [
+      500,
+      4000
+    ]
+  },
+  "data_provenance": {
+    "dataset_path": "Data.mat",
+    "sha256": "45cf5eeb83c659489a6dc981a59ae4fe045f2df2bbe6ebb084139dc3d5333e48",
+    "mat_format": "v5",
+    "n_frequencies": 2049,
+    "n_subjects": 14,
+    "n_reinsertions": 3,
+    "n_devices": 14,
+    "invalid_policy": "exclude"
+  },
+  "error": null
+}

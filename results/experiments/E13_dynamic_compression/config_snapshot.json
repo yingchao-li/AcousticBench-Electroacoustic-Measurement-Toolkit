@@ -1,0 +1,48 @@
+{
+  "project_seed": 20260422,
+  "analysis": {
+    "alpha": 0.05,
+    "correction": "holm",
+    "bootstrap": {
+      "n_resamples": 10000,
+      "confidence": 0.95,
+      "seed": 20260422,
+      "method": "percentile"
+    },
+    "bands": {
+      "method": "octave",
+      "custom_edges_hz": [
+        20.0,
+        100.0,
+        250.0,
+        500.0,
+        1000.0,
+        2000.0,
+        4000.0,
+        8000.0,
+        16000.0,
+        22050.0
+      ]
+    }
+  },
+  "experiment_parameters": {
+    "code": "E13",
+    "static_levels_dbfs": [
+      -40,
+      -30,
+      -20,
+      -10
+    ],
+    "tone_hz": 1000,
+    "attack_release_ms": [
+      5,
+      50
+    ],
+    "compression_ratio": 3.0,
+    "kneepoint_dbfs": -35.0
+  },
+  "figures": {
+    "format": "png",
+    "dpi": 150
+  }
+}

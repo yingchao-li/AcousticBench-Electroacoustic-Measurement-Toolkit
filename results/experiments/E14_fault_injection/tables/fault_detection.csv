@@ -1,0 +1,7 @@
+fault_type,true_parameter,true_value,measured_value,unit,absolute_error,relative_error_percent,tolerance,detected
+clipping,clip_level_dbfs,-24,-24,dBFS,0,0,0.5,True
+dropout,duration_s,0.3,0.300020833333,s,2.08333333333e-05,0.00694444444443,0.01,True
+dc_offset,offset,0.05,0.05,linear,1.38777878078e-17,2.77555756156e-14,0.0001,True
+gain_error,gain_db,-6,-6,dB,8.881784197e-16,1.48029736617e-14,0.2,True
+harmonic_distortion,percentage,3,3,%,2.44249065418e-14,8.14163551392e-13,0.2,True
+latency,delay_ms,12,12,ms,0,0,0.03125,True

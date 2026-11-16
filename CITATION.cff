@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: "If you use AcousticBench, please cite the software and the underlying dataset."
+title: "AcousticBench — Electroacoustic Measurement, Validation & Reporting Toolkit"
+abstract: >-
+  An open, reproducible toolkit for electroacoustic measurement analysis,
+  signal-processing validation and automated engineering reports. It provides
+  MATLAB and Python implementations of core measurement algorithms, a
+  Streamlit research dashboard, a virtual hearing aid, a 1000-case synthetic
+  validation suite and sixteen reproducible experiments.
+version: 0.1.0
+date-released: "2026-11-16"
+license: MIT
+repository-code: "https://github.com/example/AcousticBench"
+keywords:
+  - electroacoustics
+  - hearing aids
+  - real-ear measurement
+  - probe tube
+  - digital signal processing
+  - measurement automation
+  - reproducible research
+authors:
+  - name: "AcousticBench contributors"
+references:
+  - type: dataset
+    title: >-
+      Original data for: "On the effect of probe tube presence on measured
+      hearing aid transmission behavior"
+    authors:
+      - family-names: Denk
+        given-names: Florian
+      - family-names: Hackenberg
+        given-names: Lea
+      - family-names: Husstedt
+        given-names: Hendrik
+    year: 2026
+    publisher:
+      name: Zenodo
+    doi: 10.5281/zenodo.20023285
+    license: CC-BY-4.0
+  - type: article
+    title: >-
+      On the effect of probe tube presence on measured hearing aid
+      transmission behavior
+    authors:
+      - family-names: Denk
+        given-names: Florian
+      - family-names: Hackenberg
+        given-names: Lea
+      - family-names: Husstedt
+        given-names: Hendrik
+    year: 2026
+    publisher:
+      name: Zenodo
+    doi: 10.5281/zenodo.20023116
